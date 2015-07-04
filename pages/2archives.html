@@ -1,0 +1,51 @@
+---
+layout: page
+title: Archives
+permalink: /archives/
+icon: glyphicon-file
+---
+<div class="row">
+	<div class="col-sm-9 col-xs-12">
+		<div class="section-left">
+			<ul class="list-unstyled">
+			     {% for post in site.posts limit:100 %} 
+				 {% unless post.next %} 
+			    <h2>{{ post.date | date: '%Y' }}</h2> 
+				{% else %} {% capture year %}{{ post.date | date: '%Y' }}{% endcapture %} {% capture nyear %}{{ post.next.date | date: '%Y' }}{% endcapture %} 
+				{% if year != nyear %} 
+			    <h2>{{ post.date | date: '%Y' }}</h2> {% endif %} 
+				{% endunless %} 
+			    <li><h4><span>{{ post.date | date_to_string }}</span>&raquo;<a href="{{ post.url }}">{{ post.title }}</a></h4></li> 
+				{% endfor %} 
+			</ul> 
+		</div>
+	</div>
+	<div class="col-sm-3 col-xs-12">
+		<div class="section-right">
+            <div class="head-pic">
+              <a href=""><img src="{{ site.baseurl }}/img/xunyunyun.png" alt="头像" title="点击查看" /></a>
+            </div>
+
+            <div class="categories-header">
+              Categories
+            </div>
+            <ul class="categories-list">
+              <!-- <li>
+                <a href="javascript:;"  cate="All">
+                  All<span class="my-badge"> {{site.categories | size}}</span>
+                </a>
+              </li> -->
+            {% for category in site.categories %}
+              <li>
+                <a href="javascript:;" cate="{{ category | first }}">
+                  {{ category | first }} <span class="my-badge">{{ category | last | size }}</span>
+                </a>
+              </li>
+            {% endfor %}
+            </ul>
+
+        </div>
+	</div>
+	
+
+</div>

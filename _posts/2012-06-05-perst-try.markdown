@@ -1,0 +1,19 @@
+---
+layout: post
+category: "android"
+title:  "Perst在Android中的简单应用"
+tags: [Perst,Android]
+---
+Perst的介绍文字颇多，但应用例子却不好找。关于Perst的介绍文字大家去Google或百度找吧。测试发现，在大数量（1w及以上）情况下，Perst性能的确远超Sqlite。下面讲解一下Perst的简单操作过程，并附上一测试例子。
+ 
+###一、Perst的应用基本步骤：
+1、建立信息类；<br/>
+2、建立索引Root类；<br/>
+3、进行数据库操作。
+ 
+###二、例子Android操作例子
+Github：<https://github.com/panxw/android-develop-toolkit/tree/master/AndroidPerstTutorial>
+
+###三、参考文献
+<http://www.mcobject.com/perst><br/>
+<http://www.cnblogs.com/zzyyll2/archive/2007/09/07/885149.html>
