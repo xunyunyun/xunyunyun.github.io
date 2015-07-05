@@ -1,0 +1,311 @@
+/*!
+ * Start Bootstrap - Blog Home HTML Template (http://startbootstrap.com)
+ * Code licensed under the Apache License v2.0.
+ * For details, see http://www.apache.org/licenses/LICENSE-2.0.
+ */
+
+
+/* common style */
+a:link {color: #000;}		/* 未访问的链接 */
+a:visited {color: #000;}	/* 已访问的链接 */
+a:hover {color: #00969f;text-decoration: none;}	/* 鼠标移动到链接上 */
+a:active {color: #00969f;}	/* 选定的链接 */
+li {
+	list-style: none;
+}
+ul,li {
+	margin: 0;
+	padding: 0;
+}
+.clearfix:after { 
+	content:""; 
+	display:block; 
+	clear:both;
+	visibility: none;
+	overflow: hidden;
+	height:0;
+}
+.clearfix { 
+	zoom:1;
+}
+.fl { 
+	float:left;
+}
+.fr { 
+	float:right;
+}
+
+
+
+
+/* header */
+.default-header {
+	background-color: #00969f;
+}
+.default-header a:link {
+	color: #FFF;
+}	
+.default-header a:visited {
+	color: #FFF;
+}	
+.default-header a:hover {
+	color: #00969f;
+	text-decoration: none;	
+}	
+.default-header a:active, .default-header li.active a {
+	color: #00969f;
+}	
+.default-header .navbar {
+	margin-bottom: 0;
+}
+.navbar-nav li {
+	width: 100px;
+	text-align: left;
+}
+.navbar-nav > li > a:focus ,
+.navbar-nav > li > a:hover {
+	background-color: rgba(256,256,256,0.5);	
+} 
+.navbar-nav > li.active > a {
+	background-color: rgba(256,256,256,0.8);
+}
+.navbar-brand,.navbar-text {
+	color:#FFF;
+}
+a.navbar-brand:hover {
+	color:#EEE;
+}
+.navbar-toggle {
+    border-color: rgba(256,256,256,0.3);
+}
+.navbar-toggle:hover {
+    background-color: rgba(256,256,256,0.3);
+}
+.icon-bar {
+	background-color: #FFF;
+}
+
+
+/* page-content 两种不同的布局形式，阴影效果不同*/
+.post-About .container,.post-Demo .container {
+	box-shadow: 0 0 10px #AAA;
+}
+.page-content {
+	box-shadow: 0 0 10px #AAA;
+}
+
+/* archives  CSS & index CSS*/
+.section-left, .section-right {
+	box-shadow: 0 0 10px #AAA;
+}
+.section-right {
+	
+}
+
+
+.post-Archives .section-left {
+	margin-top: 0;
+	padding: 10px 20px;
+}
+
+/* about CSS */
+.post-About a {
+	color: #4DB6BC;
+}
+
+/* index.html */
+.post-list li {
+	border-bottom: 1px solid #DDD;
+	padding: 10px;
+	margin: 0;
+	-webkit-box-sizing: border-box;
+	   -moz-box-sizing: border-box;
+	        box-sizing: border-box;
+}
+
+.head-pic {
+	text-align: center;
+	padding: 20px;
+}
+.head-pic a:hover img {
+	-webkit-transition:1s ;
+	-moz-transition:1s;
+	transition:1s;
+	-webkit-transform:rotate(360deg);
+	-moz-transform:rotate(360deg);
+	transform: rotate(360deg);
+}
+
+.categories-header {
+	font-weight: bold;
+	border-top: 1px solid #DDD;
+}
+.categories-list li,.categories-header {
+	display: block;
+	padding: 0 10px;
+	border-bottom: 1px solid #DDD; 
+	height: 32px;
+}
+.categories-list li a {
+	display: block;
+	margin: 4px 0; 
+	font-size: 14px;
+}
+.categories-list li span {
+	float:right;	
+	border-radius: 24px;
+	line-height: 24px;
+	width: 24px;
+	text-align: center;
+	background-color: #00969f;
+	color: #FFF;
+	font-weight: bold;
+}
+
+.categories-list li a:hover span {
+	-webkit-transition:1s ;
+	-moz-transition:1s;
+	transition:1s;
+	-webkit-transform:rotate(360deg);
+	-moz-transform:rotate(360deg);
+	transform: rotate(360deg);
+}
+
+
+
+
+/* demo CSS */
+/* 
+ *瀑布流(根据屏幕宽度调整列数)
+ */
+@media (max-width:1200px) {
+	#waterfall {
+		-webkit-column-count: 3 !important;
+		-moz-column-count: 3 !important;
+		-o-column-count: 3 !important;
+		-ms-column-count: 3 !important;
+	}
+}
+@media (max-width:786px) {
+	#waterfall {
+		-webkit-column-count: 2 !important;
+		-moz-column-count: 2 !important;
+		-o-column-count: 2 !important;
+		-ms-column-count: 2 !important;
+	}
+}
+@media (max-width:500px) {
+	#waterfall {
+		-webkit-column-count: 1 !important;
+		-moz-column-count: 1 !important;
+		-o-column-count: 1 !important;
+		-ms-column-count: 1 !important;
+	}
+}
+#waterfall {
+	background-color: #FFF;
+	padding: 20px 20px; 
+	margin-bottom: 10px; 
+
+	-webkit-column-gap: 20px;
+	-moz-column-gap: 20px;
+	-o-column-gap: 20px;
+	-ms-column-gap: 20px;
+
+	-webkit-column-count: 4;
+	-moz-column-count: 4;
+	-o-column-count: 4;
+	-ms-column-count: 4;
+
+}
+#waterfall .pic-box {
+	margin-bottom: 20px;
+	box-shadow: 0 0 6px #000;
+}
+#waterfall .pic-container {
+	padding: 10px 10px 10px 50px;
+	position:relative;
+	color:#FFF;
+}
+#waterfall .pic-box a {
+	display: block;
+}
+/* 鼠标放上效果 */
+#waterfall .pic-box a:hover {
+	-webkit-transform:rotate(0deg)  scale(1.05);
+	-moz-transform:rotate(0deg)  scale(1.05);
+	text-transform: rotate(0deg)  scale(1.05);
+	box-shadow: 0 0 10px #000;
+	z-index: 99;
+}
+#waterfall .pic-box img {
+	display: block;
+}
+#waterfall .pic-box .pic-container, #waterfall .pic-box img  {
+	width: 100%;
+}
+#waterfall .J {
+	background-color: #522A5C;	
+}
+#waterfall .U {
+	background-color: #5900b2;	
+}
+#waterfall .A {
+	background-color: #d9a300;	
+}
+#waterfall .F {
+	background-color: #8c2300;	
+}
+.pic-container span {
+	position:absolute;
+	top: 10px;
+	left: 10px;
+	width: 28px;
+	height: 28px;
+	line-height: 28px;
+	border: 1px solid #DDD;
+	border-radius: 28px;
+	font-size: 20px;
+	text-align: center;
+	font-weight: normal;
+}
+.pic-container h3 {
+	font-size: 16px;
+	font-weight: normal;
+}
+.pic-container p {
+	text-indent: 0;
+	font-size: 12px;
+	line-height: 170%;
+}
+
+
+
+/* footer */
+footer {
+	background-color: #00969f;
+	min-height: 50px;
+}
+footer ul {
+	max-width: 720px;
+	margin: 0 auto;
+	margin-top: 14px; 
+}
+footer li {
+	width:240px;
+	float: left;
+	text-align: center;
+}
+footer li span {
+	margin-right: 10px;
+	vertical-align: middle;
+}
+
+footer a:link {color: #CCC;}		/* 未访问的链接 */
+footer a:visited {color: #CCC;}	/* 已访问的链接 */
+footer a:hover {color: #FFF; text-decoration: none;}	/* 鼠标移动到链接上 */
+footer a:active {color: #FFF;}	/* 选定的链接 */
+
+footer .point{
+	margin: 0 8px;
+}
