@@ -1,0 +1,23 @@
+body {
+	margin: 0;
+	padding: 0;
+}
+
+a:hover {
+	text-decoration:none; 
+}
+
+.float_left {
+	float:left;
+}
+.float_right {
+	float:right;
+}
+.navigation .menu {
+	list-style: none;
+}
+.navigation .menu li {
+	float:left;
+	margin: 0 30px;
+	font-size: 20px;
+}

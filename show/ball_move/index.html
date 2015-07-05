@@ -1,0 +1,159 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>canvas交互</title>
+	<style>
+		#canvas {
+			position: absolute;
+			left:50%;
+			top:50%;
+			margin:-300px 0 0 -400px;
+			border:2px solid #ccc;
+		}
+		#controller {
+			width:200px;
+			height:80px;
+			position: absolute;
+			left:50%;
+			top:50%;
+			margin:-280px 0 0 -380px;
+			background-color:#DDD;
+			opacity:0.7;
+			filter:alpha(opacity:70);			
+		}
+		#controller h1 {
+			font-size: 18px;
+			color:#058;
+			text-align:center; 
+
+		}
+		a {
+			display: inline-block;
+			color:black;
+			width:50px;
+			text-decoration: none;
+			text-align:center; 
+			background-color: #AAA;
+			margin-left:10px;
+
+		}
+		#white-color-btn {
+			background-color: #FFF;
+		}
+		#black-color-btn {
+			background-color: #000;
+		}
+	</style>
+</head>
+<body>
+<div id="canvas-wrapper">
+	<canvas id="canvas"  width='800px' height='600px'>浏览器不支持canvas
+	</canvas>
+	<div id="controller">
+		<h1>canvas绘图之旅</h1>
+		<a href="#" id="canvas-btn">stop</a>
+		<a href="#" class="color-btn" id="white-color-btn">&nbsp;</a>
+		<a href="#" class="color-btn" id="black-color-btn">&nbsp;</a>
+	</div>
+</div>
+<script type="application/javascript">
+	var balls = [];
+	var isMoving = true;
+	var themeColor = "white";
+
+	window.onload = function(){
+		var canvas = document.getElementById("canvas");
+		var context = canvas.getContext('2d');
+
+		for(var i=0; i < 50 ; i++ ){
+			var R = Math.floor(Math.random()*255);
+			var G = Math.floor(Math.random()*255);
+			var B = Math.floor(Math.random()*255);
+			var radius = Math.random()*50+20;
+			var aball = { 
+				color:"rgb("+R+","+G+","+B+")",
+				radius:radius,
+				x:Math.random()*canvas.width, 
+				y:Math.random()*canvas.height,
+				vx: (Math.random()*5+5)*Math.pow(-1,Math.floor(Math.random()*100)),
+				vy: (Math.random()*5+5)*Math.pow(-1,Math.floor(Math.random()*100))
+			};
+			balls[i] = aball;
+		}
+		setInterval(function(){
+			draw( context )
+			if(isMoving){
+				update(canvas.width,canvas.height);
+			}
+		},40);
+	};
+
+	var stop = document.getElementById("canvas-btn");
+	stop.onclick = function(){
+		if(isMoving){
+			isMoving = false;
+		}else{
+			isMoving = true;
+		}
+	};
+	var bgblack = document.getElementById("black-color-btn");
+	bgblack.onclick = function(){
+		themeColor = "black";
+	};
+	var bgwhite = document.getElementById("white-color-btn");
+	bgwhite.onclick = function(){
+		themeColor = "white";
+	};
+
+	function draw( cxt ){
+		var canvas = cxt.canvas;
+		cxt.clearRect(0,0,canvas.width,canvas.height);
+
+		if( themeColor == "black"){
+			console.log("black theme");
+			cxt.fillStyle = "black";
+			cxt.fillRect(0,0,canvas.width,canvas.height);
+		}
+		for (var i=0; i<balls.length; i++){
+			cxt.fillStyle = balls[i].color;
+			cxt.beginPath();
+			cxt.arc(balls[i].x,balls[i].y,balls[i].radius,0,Math.PI*2);
+			cxt.closePath();
+			cxt.fill();
+		}
+
+	}
+
+//动画，碰撞检测
+	function update( canvasWidth,canvasHeight ){
+		for(var i=0; i<balls.length; i++){
+			balls[i].x += balls[i].vx;
+			balls[i].y += balls[i].vy;
+			if(balls[i].x - balls[i].radius <= 0 ){
+				balls[i].vx = -balls[i].vx;
+				balls[i].x = balls[i].radius;
+			}
+			if(balls[i].x + balls[i].radius >=canvasWidth ){
+				balls[i].vx = -balls[i].vx;
+				balls[i].x = canvasWidth - balls[i].radius;
+			}
+			if(balls[i].y - balls[i].radius <= 0 ){
+				balls[i].vy = -balls[i].vy;
+				balls[i].y = balls[i].radius;
+			}
+			if(balls[i].y + balls[i].radius >=canvasHeight ){
+				balls[i].vy = -balls[i].vy;
+				balls[i].y = canvasHeight - balls[i].radius;
+			}
+
+		}
+
+	}
+
+
+</script>
+	
+</body>
+</html>
