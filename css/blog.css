@@ -86,6 +86,14 @@ a.navbar-brand:hover {
 }
 
 
+/* comment */
+.comment {
+	margin-top: 50px;
+	box-shadow: 0 0 10px #AAA;
+	margin-bottom: 50px;
+}
+
+
 /* page-content 两种不同的布局形式，阴影效果不同*/
 .post-About .container,.post-Demo .container {
 	box-shadow: 0 0 10px #AAA;
@@ -286,6 +294,11 @@ footer {
 	background-color: #00969f;
 	min-height: 50px;
 }
+
+.foot.container {
+	box-shadow: none;
+}
+
 footer ul {
 	max-width: 720px;
 	margin: 0 auto;
