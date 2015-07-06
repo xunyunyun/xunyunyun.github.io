@@ -94,6 +94,19 @@ a.navbar-brand:hover {
 }
 
 
+/* post.html */
+.updownlink {
+	border-top:1px solid #DDD;
+	padding-top: 20px;
+}
+
+.updownlink a {
+	color: #4DB6BC;
+}
+.updownlink a:hover,.updownlink a:focus {
+	color: #00969f;
+}
+
 /* page-content 两种不同的布局形式，阴影效果不同*/
 .post-About .container,.post-Demo .container {
 	box-shadow: 0 0 10px #AAA;

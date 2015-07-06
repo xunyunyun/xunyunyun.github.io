@@ -11,6 +11,26 @@ layout: default
 	  <article class="post-content">
 	    {{ content }}
 	  </article>
+	  <!-- 添加上下文链接 -->
+	  <div class="updownlink">
+		  {%if page.previous%}
+		  <span class="next fl">
+		    上篇：
+		    <a href="{{page.previous.url}}">
+		      {{page.previous.title}}
+		    </a>
+		  </span>
+		  {%endif%} 
+		  {%if page.next%}
+		  <span class="prev fr">
+		    下篇：
+		    <a href="{{page.next.url}}">
+		      {{page.next.title}}
+		    </a>
+		  </span>
+		  {%endif%}
+	  </div>
+
 	</div>
 	<div class="container comment">		
 	  <!--搜狐畅言 comment-->
