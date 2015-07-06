@@ -5,17 +5,41 @@ layout: default
     <div class="row">
       <div class="col-sm-9 col-xs-12">
         <div class="section-left">
-          <ul class="post-list">
-            {% for post in site.posts %}
-              <li>
-                <span class="post-meta">{{ post.date | date: "%b %-d, %Y" }}</span>
+          <div class="post-list-item">
 
-                <h2>
-                  <a class="post-link" href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a>
-                </h2>
-              </li>
+            <ul class="post-list" post-cate="All">
+              {% for post in site.posts %}
+                <li>
+                  <span class="post-meta">{{ post.date | date: "%b %-d, %Y" }}</span>
+
+                  <h2>
+                    <a class="post-link" href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a>
+                  </h2>
+                </li>
+              {% endfor %}
+            </ul>
+
+            <!-- <div class="posts-in-categories"> -->
+            {% for category in site.categories %}
+              <ul class="post-list" post-cate="{{category | first}}">
+                {% for posts in category  %}
+                  {% for post in posts %}
+                    {% if post.url %}
+                      <li>
+                        <span class="post-meta">{{ post.date | date: "%b %-d, %Y" }}</span>
+                        <h2>
+                          <a class="post-link" href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a>
+                        </h2>
+                      </li>
+                    {% endif %}
+                  {% endfor %}
+                {% endfor %}
+              </ul>
             {% endfor %}
-          </ul>
+
+
+
+          </div>
         </div>
       </div>
       <div class="col-sm-3 col-xs-12">
@@ -28,11 +52,11 @@ layout: default
               Categories
             </div>
             <ul class="categories-list">
-             <!--  <li>
+              <li>
                 <a href="javascript:;"  cate="All">
                   All<span class="my-badge"> {{site.categories | size}}</span>
                 </a>
-              </li> -->
+              </li>
             {% for category in site.categories %}
               <li>
                 <a href="javascript:;" cate="{{ category | first }}">
@@ -47,6 +71,10 @@ layout: default
 
     </div>
 </div>
+
+
+
+
 
 
 
