@@ -54,7 +54,7 @@ layout: default
             <ul class="categories-list">
               <li>
                 <a href="javascript:;"  cate="All">
-                  All<span class="my-badge"> {{site.categories | size}}</span>
+                  All<span class="my-badge"> {{ site.categories | size }}</span>
                 </a>
               </li>
             {% for category in site.categories %}
@@ -72,6 +72,10 @@ layout: default
     </div>
 </div>
 
+<div class="container commit">
+    <!--搜狐畅言 commit-->
+    <div id="SOHUCS"></div>
+</div>
 
 
 

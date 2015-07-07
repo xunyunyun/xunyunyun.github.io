@@ -85,7 +85,31 @@ a.navbar-brand:hover {
 	background-color: #FFF;
 }
 
-
+/* backtotop */
+#backtotop {
+	display: none;
+	position: fixed;
+	bottom: 50px;
+	right: 10px;
+	text-align: center;
+}
+#backtotop a {
+	display: inline-block;
+}
+#backtotop span {
+	display: inline-block;
+	width: 50px;
+	height: 50px;
+	padding-top: 8px;
+	border-radius: 6px;
+	font-size: 40px;
+	background-color: #DDD;
+	color: #AAA;
+}
+#backtotop a:hover span {
+	background-color: #AAA;
+	color: #FFF;
+}
 
 
 /* commit */

@@ -5,7 +5,9 @@ $(document).ready(function(){
 	// 按标签分类
 	categoryDisplay();
 	// 时间轴实现
-	timeline();
+	timeLine();
+	// 返回头部
+	backToTop();
 });
 
 /**
@@ -31,10 +33,9 @@ function categoryDisplay() {
  * 右侧的相关裂变展开或者收起月份
  * @return {[type]} [description]
  */
- function timeline(){
+ function timeLine(){
  	$('.monthline>li').hide();
  	$('.base-year').hide();
- 	// $('.monthline>li[class!="date-tag"]').appendTo($('.dateline'));
  
  	$('.yearline').delegate("li","click",function(){
  		console.log("yearline");
@@ -71,8 +72,21 @@ function categoryDisplay() {
 		$('.dateline>li').hide();
 		$('.dateline>li[class='+$yearmonth+']').show();
 		e.stopPropagation();
-
 	});
+ }
 
+ 
+ function backToTop(){
+ 	$winHeight = $(window).innerHeight();
+ 	$(window).scroll(function(){
+ 		$top = $(window).scrollTop();
+	 	if($top > $winHeight){
+	 		$('#backtotop').show();
+	 	}
+ 	});
+ 	
+ 	$('#backtotop>a').click(function(){
+ 		$(window).scrollTop(0);
+ 	});
 
  }
