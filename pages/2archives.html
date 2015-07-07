@@ -37,7 +37,7 @@ icon: glyphicon-file
     
       <!-- 添加时间轴 -->
       <ul class="timeline yearline">
-          <li id="near" class="active"><a href="">最近</a></li>
+          <li id="near" class="active"><a href="">new</a></li>
         {% for post in site.posts %} 
         {% unless post.next %} 
           <li id="{{ post.date | date: '%Y' }}"><a href="#">{{ post.date | date: '%Y' }}</a></li> 
@@ -56,15 +56,15 @@ icon: glyphicon-file
           {% capture next_year %}{{ post.previous.date | date: "%Y" }}{% endcapture %}
           {% capture next_month %}{{ post.previous.date | date: "%m" }}{% endcapture %}
           {% if forloop.first %}
-              <li class="date-tag" id="{{this_year}}-{{this_month}}"><a href="#">{{this_month}}月</a></li>
+              <li class="date-tag" id="{{this_year}}-{{this_month}}"><a href="#">{{this_month}}</a></li>
           {% endif %}
           {% if forloop.last %}
           {% else %}
             {% if this_year != next_year %}
-              <li class="date-tag" id="{{next_year}}-{{next_month}}"><a href="#">{{next_month}}月</a></li>
+              <li class="date-tag" id="{{next_year}}-{{next_month}}"><a href="#">{{next_month}}</a></li>
             {% else %}    
               {% if this_month != next_month %}
-              <li class="date-tag" id="{{next_year}}-{{next_month}}"><a href="#">{{next_month}}月</a></li>
+              <li class="date-tag" id="{{next_year}}-{{next_month}}"><a href="#">{{next_month}}</a></li>
               {% endif %}
             {% endif %}
           {% endif %}
