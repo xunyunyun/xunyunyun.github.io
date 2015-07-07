@@ -32,7 +32,7 @@ icon: glyphicon-heart
 
 
 2015.5.29      |  参加360前端星计划培训，听月影、文博、屈屈等大牛给我们讲课，和一群爱好前端的小伙伴一起成长，完成大作业[todolist](http://xunyunyun.github.io/show/todo/index.html)。
-2015.4.27      |  跟进百度前端技术学院的任务，学习其提供的学习资料，完成了任务[个人简历]()。
+2015.4.27      |  跟进百度前端技术学院的任务，学习其提供的学习资料，完成了任务[个人简历](http://xunyunyun.github.io/show/resume/index.html)。
 2015.4         |  前端实习笔试、面试等，总结自己前端知识体系的不足，查缺补漏中。
 2015.3         |  做实验室项目，运用所学知识开始做一些demo，[2048小游戏](http://xunyunyun.github.io/show/2048game/index.html)、[移动web相册](http://xunyunyun.github.io/show/mobile_web_album/index.html)、[CSS3照片墙](http://xunyunyun.github.io/show/picture_wall/index.html)、[canvas实现小球滚动](http://xunyunyun.github.io/show/ball_move/index.html)、[瀑布流](http://xunyunyun.github.io/show/waterfalldemo/index.html)、[仿新浪微博](http://xunyunyun.github.io/show/xinlang/index.html)等。
 2015.1         |  仔细阅读《HTTP权威指南》
