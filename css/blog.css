@@ -86,8 +86,8 @@ a.navbar-brand:hover {
 }
 
 
-/* comment */
-.comment {
+/* commit */
+.commit {
 	margin-top: 50px;
 	box-shadow: 0 0 10px #AAA;
 	margin-bottom: 50px;
@@ -107,6 +107,24 @@ a.navbar-brand:hover {
 	color: #00969f;
 }
 
+/* archives */
+
+.timeline li>a {
+	display: block;
+	height: 50px;
+	line-height: 50px;
+	border-left: 4px solid #CCEAEC;
+}
+.timeline li a:hover,.timeline li.active>a{
+	border-left: 4px solid #00969f;
+}
+
+
+.list-unstyled li{
+	border-bottom: 1px solid #DDD; 
+}
+
+
 /* page-content 两种不同的布局形式，阴影效果不同*/
 .post-About .container,.post-Demo .container {
 	box-shadow: 0 0 10px #AAA;
@@ -119,10 +137,6 @@ a.navbar-brand:hover {
 .section-left, .section-right {
 	box-shadow: 0 0 10px #AAA;
 }
-.section-right {
-	
-}
-
 
 .post-Archives .section-left {
 	margin-top: 0;
@@ -307,11 +321,9 @@ footer {
 	background-color: #00969f;
 	min-height: 50px;
 }
-
 .foot.container {
 	box-shadow: none;
 }
-
 footer ul {
 	max-width: 720px;
 	margin: 0 auto;
