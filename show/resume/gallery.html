@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>gallery</title>
+	<link rel="stylesheet" type="text/css" href="css/style.css" />
+</head>
+<body>
+<div class="content">
+	<div class="header">
+		<div class="model">
+			<h1 class="fl">XUNYUNYUN</h1>
+			<ul class="navigation fr">
+				<li><a href="index.html">首页</a></li>
+				<li><a href="blog.html">文章</a></li>
+				<li><a href="gallery.html">作品</a></li>
+				<li><a href="about.html">关于</a></li>
+			</ul>
+		</div>
+		<a href="https://github.com/xunyunyun" target="_blank"><img src="img/icon-github.png" alt="logo"></a>	
+	</div>
+	<!-- content -->
+	<div class="content-div">
+		<div class="model">
+			<div id="Tab-menu" class="clearfix">
+				<ul>
+					<li class="active" id="ALL"><a href="#">ALL</a></li>
+					<li class="notfirst" id="JavaScript"><a href="#">JavaScript Util Functions</a></li>
+					<li class="notfirst" id="UI"><a href="#">UI Components</a></li>
+					<li class="notfirst" id="Framework"><a href="#">Framework</a></li>
+					<li class="notfirst" id="Application"><a href="#">Application</a></li>
+				</ul>	
+			</div>
+			<!-- left main -->
+			<div class="main-div fl">
+				<div class="clearfix" id="waterfall">
+					<div class="pic-box">
+						<a href="http://xunyunyun.github.io/show/waterfalldemo/index.html" target="_blank"><img src="img/waterfall.png" alt="瀑布流demo" title="点击查看" /></a>
+						<div class="pic-container J">
+							<span>J</span>
+							<h3>瀑布流demo</h3>
+							<p>其中包括三种实现方式：javascript原生实现、jQuery实现、CSS3实现瀑布流的效果。随着滚动条滚动来实现图片的动态加载。</p>
+							<!-- <p>js实现：</p>
+							<p>
+								需要一步一步的计算，列数=浏览器窗口宽度/图片宽度
+								图片定位是根据每一列数据库的高度计算接下来图片的位置；
+								图片排序是按照图片计算的位置横向排列，位置是计算出来的，比较规范。
+							</p>
+							<p>CSS3实现：</p>
+							<p>
+								不需要计算，浏览器自动计算，只需要设置列宽，CSS3性能高很多，因为浏览器可以直接解析，不需要js代码去计算；
+								缺点：列宽随着浏览器窗口大小进行改变，用户体验不好
+									 						图片排序按照垂直顺序排列，打乱图片显示顺序
+									 					</p>	 -->
+						</div>
+					</div>
+					<div class="pic-box" >
+						<a href="http://xunyunyun.github.io/show/mobile_web_album/index.html" target="_blank"><img src="img/mobile_web_album.jpg" alt="移动web相册"  title="在移动端点击查看" /></a>
+						<div class="pic-container U">
+							<span>U</span>
+							<h3>移动web相册</h3>
+							<p>使用zepto.js中touch.js实现移动端的触屏事件;使用animate.css实现相册浏览时的动画效果</p>		
+						</div>
+					</div>
+					
+					<div class="pic-box">
+						<a href="http://xunyunyun.github.io/show/navigation/index.html" target="_blank"><img src="img/fixed_navigation.jpg" alt="侧边固定导航条" title="点击查看"/></a>
+						<div class="pic-container A">
+							<span>A</span>
+							<h3>侧边固定导航条demo</h3>
+							<p>实现随着网页滚动条的滚动位置来切换侧边导航条tag；及点击侧边导航条tag实现页面跳转</p>		
+						</div>
+					</div>
+					
+					<div class="pic-box">
+						<a href="http://xunyunyun.github.io/show/2048game/index.html" target="_blank"><img src="img/2048game.jpg" alt="2048小游戏" title="点击查看"/></a>
+						<div class="pic-container F">
+							<span>F</span>
+							<h3>2048小游戏</h3>
+							<p>通过CSS实现16点棋盘格，JS实现基本的逻辑功能，可兼容移动端和PC端</p>		
+						</div>
+					</div>
+					<div class="pic-box">
+						<a href="http://xunyunyun.github.io/show/slide_picture/index.html" target="_blank"><img src="img/slide_picture.jpg" alt="图片循环滚动播放" title="点击查看"/></a>
+						<div class="pic-container J">
+							<span>J</span>
+							<h3>图片循环滚动播放效果</h3>
+							<p>实现了鼠标悬停，点指定tag到指定图片，向左向右切换图片效果</p>		
+						</div>
+					</div>
+					<div class="pic-box">
+						<a href="http://xunyunyun.github.io/show/picture_wall/index.html" target="_blank"><img src="img/picture_wall.jpg" alt="照片墙" title="点击查看"/></a>
+						<div class="pic-container A">
+							<span>A</span>
+							<h3>照片墙</h3>
+							<p>由CSS3实现的动画效果：用到了box-shodaw阴影效果；绝对定位和z-index显示层级；
+							transform中的rotate旋转角度、scale缩放倍数、skew扭曲元素；tansition实现动画。</p>	
+						</div>
+					</div>
+					<div class="pic-box">
+						<a href="http://xunyunyun.github.io/show/xinlang/index.html" target="_blank"><img src="img/xinlang.jpg" alt="仿新浪微博"  title="点击查看"/></a>
+						<div class="pic-container J">
+							<span>J</span>
+							<h3>仿新浪微博</h3>
+							<p>其中用到的图标为使用Bootstrap中的图标，微博图片实现了查看大图的效果</p>		
+						</div>
+					</div>
+					<div class="pic-box">
+						<a href="http://xunyunyun.github.io/show/ball_move/index.html" target="_blank"><img src="img/ball_move.jpg" alt="小球滚动" title="点击查看"/></a>
+						<div class="pic-container A">
+							<span>A</span>
+							<h3>小球滚动demo</h3>
+							<p>用canvas实现的小球滚动效果，实现切换背景图片和停止滚动效果</p>		
+						</div>
+					</div>
+					<div class="pic-box">
+						<a href="http://xunyunyun.github.io/show/website/index.html" target="_blank"><img src="img/website.jpg" alt="整站搭建" title="点击查看"/></a>
+						<div class="pic-container J">
+							<span>J</span>
+							<h3>整站搭建</h3>
+							<p>由给定的PSD图实现的整站搭建，技术点有如下：</p>
+							<p>photoshop切图、CSS Sprite、CSS对合成图的position定位、用CSS实现圆角的背景图、图片无缝滚动等。</p>
+							<p>此网站兼容IE7及以上版本。支持firefox、chrome、safari、opera。</p>		
+						</div>
+					</div>
+
+					
+					<!-- 瀑布流图片more -->
+				</div>
+
+				<div class="more">
+					<a href="#"><strong>&or;</strong>点击查看更多</a>
+				</div>
+
+			</div>
+
+
+
+			<!-- right side -->
+			<div class="side-div fr">
+				<div class="pattern search clearfix">
+					<input type="text" placeholder="keywords"/>
+					<a href="#">go</a>
+					<!--  <span id="search-btn"><a href="#">go</a><span> -->
+				</div>
+				<ul class="pattern">
+					<li><a href="#">HTML</a></li>
+					<li class="active"><a href="#">CSS</a></li>
+					<li><a href="#">JavaScript</a></li>
+					<li><a href="#">其中文章</a></li>	
+				</ul>
+
+				<div class="pattern" id="ranklist">
+					<h3>人气排行榜</h3>
+					<ul>
+						<li>
+							<div class="number">1</div>
+							<div class="progress">
+								<div class="bar" style="width:100%"></div>
+							</div>
+							<span class="text">ui.tree</span>
+						</li>
+						<li>
+							<div class="number">2</div>
+							<div class="progress">
+								<div class="bar" style="width:80%"></div>
+							</div>
+							<span class="text">util.trim</span>
+						</li>
+						<li>
+							<div class="number">3</div>
+							<div class="progress">
+								<div class="bar" style="width:60%"></div>
+							</div>
+							<span class="text">app.todo</span>
+						</li>
+						<li>
+							<div class="number">4</div>
+							<div class="progress">
+								<div class="bar" style="width:40%"></div>
+							</div>
+							<span class="text">ui.tab</span>
+						</li>
+						<li>
+							<div class="number">5</div>
+							<div class="progress">
+								<div class="bar" style="width:20%"></div>
+							</div>
+							<span class="text">util.addClass</span>
+						</li>
+					</ul>
+				</div>
+
+				
+			</div>
+		</div>
+	</div>
+	
+	<div class="footer">
+		<div class="model">
+			<ul class="classes clearfix">
+				<li><a href="index.html">主页</a></li>
+				<li><a href="blog.html">文章</a></li>
+				<li><a href="gallery.html">作品</a></li>
+				<li><a href="about.html">关于</a></li>
+			</ul>
+		</div>
+		<div class="line"></div>
+		<div class="model">
+			<ul class="menu clearfix">
+				<li class="notlast">
+					<dl>
+						<dt>学习资料</dt>
+						<dd>Link</dd>
+						<dd><a href="#">Hover时样式</a></dd>
+						<dd>Link</dd>
+						<dd>Link</dd>
+						<dd>Link</dd>
+						<dd>Link</dd>
+					</dl>
+				</li>
+				<li class="notlast">
+					<dl>
+						<dt>友情链接</dt>
+						<dd>Link</dd>
+						<dd><a href="#">Hover时样式</a></dd>
+						<dd>Link</dd>
+						<dd>Link</dd>
+					</dl>
+				</li>
+				<li class="notlast">
+					<dl>
+						<dt>学习资料</dt>
+						<dd>Link</dd>
+						<dd><a href="#">Hover时样式</a></dd>
+						<dd>Link</dd>
+						<dd>Link</dd>
+						<dd>Link</dd>
+						<dd>Link</dd>
+					</dl>
+				</li>
+				<li class="notlast">
+					<dl>
+						<dt>友情链接</dt>
+						<dd>Link</dd>
+						<dd><a href="#">Hover时样式</a></dd>
+						<dd>Link</dd>
+						<dd>Link</dd>
+					</dl>
+				</li>
+				<li>
+					<dl>
+						<dt>学习资料</dt>
+						<dd>Link</dd>
+						<dd><a href="#">Hover时样式</a></dd>
+						<dd>Link</dd>
+						<dd>Link</dd>
+						<dd>Link</dd>
+						<dd>Link</dd>
+					</dl>
+				</li>
+			</ul>
+			<p>版权信息</p>
+			<a href="https://github.com/xunyunyun" target="_blank"><img src="img/icon-github.png" alt="logo"></a>
+		</div>
+	</div>
+</div>
+	
+</body>
+</html>

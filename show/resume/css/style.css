@@ -1,0 +1,843 @@
+/* reset style */
+body, ul, li, h1, h3, p, img, dd, dl, input, span, a, img, div{
+	margin: 0;
+	padding: 0;
+	/* font-family:"Microsoft YaHei"; */
+}
+img,input,a{ 
+	border:none;
+}
+input{
+	outline:none; 
+	background:none;
+}
+ul { 
+	list-style:none;
+}
+a { 
+	text-decoration:none; color:#FFF;
+}
+/* 对所有的段落设置2个字的缩进 */
+p {
+	text-indent: 2em;  
+}
+/* 清浮动 */
+.clearfix:after { 
+	content:""; 
+	display:block; 
+	clear:both;
+	visibility: none;
+	overflow: hidden;
+	height:0;
+}
+/*兼容IE6、IE7，触发ie的hasLayout属性，实现清除浮动*/
+.clearfix { 
+	zoom:1;
+}
+.fl { 
+	float:left;
+}
+.fr { 
+	float:right;
+}
+/* 屏幕自适应，当屏幕小于980px时，不显示我的github连接 */
+@media (max-width:980px) {
+	.header img {
+		display: none !important;
+	}
+}
+/* ********************************************common css style（header&footer）********************************************** */
+/* 内容自适应屏幕宽度 */
+.content {
+	  width: 100%;  
+}
+/* 主内容的宽度固定为980px，左右居中 */
+.model {
+	width:980px;
+	margin: 0 auto;
+}
+/* **********头部样式********** */
+.header {
+	background-color: #522A5C;
+	color:#FFF;
+	height:32px;
+	padding-top:48px;
+	position: relative;
+}
+.header h1 {
+	font-weight: normal;
+	font-size:20px; 
+}
+.header li {
+	float: left;
+	font-family: "宋体";
+	font-size: 14px;
+	margin-left:32px;
+}
+/* 对github小图标设置绝对定位，使其在屏幕缩放时距离屏幕边界的距离都为10px */
+.header img {
+	position: absolute;
+	right:10px;
+	bottom:0;
+}
+
+/* **********底部模块********** */
+.footer {
+	background-color: #000;
+	color: #FFF;
+}
+.classes {
+	display: block;
+	width:216px;
+	margin:0 auto;
+	padding:12px 0; 
+}
+.classes li {
+	float: left;
+	width:24px;
+	margin-right: 30px;
+	font-size: 12px; 
+}
+.line { 
+	border-bottom:1px solid #555;
+}
+.menu {
+	margin-top: 40px;
+}
+.menu li {
+	display: block;
+	float: left;
+	font-size: 12px; 
+	width:180px;
+}
+.menu li .notlast {
+	margin-right: 20px;
+}
+.menu li dl dt {
+	display: block;
+	margin-bottom: 28px;
+}
+.menu li dl dd {
+	display: block;
+	margin-bottom: 10px;
+}
+.menu li dl dd a {
+	text-decoration: underline;
+}
+.footer p {
+	font-size: 12px;
+	text-align: center;
+}
+.footer img {
+	display: block;
+	margin: 0 auto; 
+	margin-top: 20px;
+}
+
+/* ********************************************index.html css style********************************************** */
+/* **********图片部分样式********** */
+/* 最初采用背景图实现，但是不能自适应屏幕宽度和对图片中文字块的定位，改为html插入图片解决 */
+.picture {
+	position: relative; 
+}
+.picture img {
+	width: 100%;
+}
+.picture .container {
+	position: absolute;
+	bottom: 0px;
+	left: 50%;
+	margin-left:110px; 
+	width:360px;	
+	background-color: #FFF; 
+	color:#FFF;
+	padding:10px 10px 30px;
+
+	/* 在不同浏览器下渐变的兼容性实现，但不知道为什么IE下还是有问题，尚未解决*/
+	/* IE下*/
+	filter:alpha(opacity=70 finishopacity=0 style=1 startx=0,starty=0,finishx=0,finishy=100%) 
+	progid:DXImageTransform.Microsoft.gradient(startcolorstr=rgba(256, 256, 256, 0.7),endcolorstr=rgba(256, 256, 256, 0),gradientType=0);
+    -ms-filter:alpha(opacity=70 finishopacity=0 style=1 startx=0,starty=0,finishx=0,finishy=100%) 
+    progid:DXImageTransform.Microsoft.gradient(startcolorstr=rgba(256, 256, 256, 0.7),endcolorstr=rgba(256, 256, 256, 0),gradientType=0);/*IE8*/ 
+	/* Firefox 3.6+ */
+    background:-moz-linear-gradient(top,rgba(256, 256, 256, 0.7), rgba(256, 256, 256, 0));
+    /* Safari 4-5, Chrome 1-9 */
+    background:-webkit-gradient(linear, 0 0, 0 75%, from(rgba(256, 256, 256, 0.7)), to(rgba(256, 256, 256, 0.5)));
+    background:-webkit-gradient(linear, 0 75%, 0 bottom, from(rgba(256, 256, 256, 0.5)), to(rgba(256, 256, 256, 0)));
+    /* Safari 5.1+, Chrome 10+ */
+    background:-webkit-linear-gradient(0 0, 0 75%, from(rgba(256, 256, 256, 0.7)), to(rgba(256, 256, 256, 0.5)));
+    background:-webkit-linear-gradient(0 75%, 0 bottom, from(rgba(256, 256, 256, 0.5)), to(rgba(256, 256, 256, 0))); 
+	/* Opera 11.10+ */
+	background:-o-linear-gradient(top,rgba(256, 256, 256, 0.7), rgba(256, 256, 256, 0));
+}
+.container h3 {
+	font-weight: normal;
+	font-size: 14px;
+	text-align: right;
+	margin-bottom: 12px;
+}
+.container p {
+	line-height: 150%;
+	font-size:12px;
+	text-indent: 2em;
+}
+/* **********主体模块，分成上下两部分：展示模块和人物简介模块********** */
+.main {
+	background-color: #DDD;
+	margin-bottom: 190px;
+}
+/* **********展示模块********** */
+#show {
+	padding-top: 10px;
+	background-color: #DDD;
+}
+/* 此处有一个三列高度相同且自适应最大高度的问题！！！ */
+/* 通过对其公共类box，设置一个远大于文字内容的底内边距，和一个相同大小的负的底外边距来消除这个高度，将父容器的overflow:hidden;列就在最高点被剪裁 */
+.boxes {
+	overflow:hidden;
+}
+.box {
+	width:320px;
+	background-color: #FFF;	
+	padding-bottom: 200px;
+	margin-bottom: -200px;
+}
+.box.notlast {
+	margin-right: 10px;
+}
+.box img {
+	width:300px;
+	height:180px;
+	margin:10px;
+}
+.box .box-content {
+	padding: 15px 30px 25px;
+}
+.box h3 {
+	font-size: 16px;
+	padding-bottom: 10px;
+	text-align: center;
+}
+.box p {
+	font-size: 12px;
+	line-height: 1.7em;
+	text-indent: 0;
+	text-align: center;
+
+}
+/* **********人物简介模块********** */
+#profile {
+	margin-top: 110px;
+	color:#000;
+	background-color: #FFF;
+	position: relative;
+}
+
+#profile img {
+	margin:0 auto;
+	width: 160px;
+	height: 160px;
+	position: absolute;
+	top:-50px;
+	left:50%;
+	margin-left: -80px;
+}
+
+#profile h3 {
+	padding-top: 160px;
+	font-size: 20px;
+	font-weight: normal;
+	text-align: center;
+}
+#profile p {
+	font-size: 14px;
+	width: 600px;
+	text-align: left;
+	margin: 0 auto; 
+	text-indent: 2em;
+	line-height: 170%;
+
+}
+
+/* *************************************************about.html css style********************************************** */
+.content-div {
+	padding-top: 20px;
+	background-color: #EEE;
+	/* 自适应高度 */
+	height: 100%;
+	overflow: auto;
+}
+/* **********主要文章部分********** */
+.main-div {
+	width: 710px;
+}
+/* **********文章模块********** */
+.article {
+	margin-bottom: 10px;
+	background-color: #FFF;
+	padding:20px;
+	position: relative;
+}
+.article .label {
+	position: absolute;
+	left: -50px;
+	top: 20px;
+	width:50px;
+	height: 80px;
+}
+
+.article .label span {
+		display: block;
+		color:#FFF;
+		font-size: 14px;
+		height: 40px;
+		line-height: 40px;
+		text-align: center;
+}
+.article .label .article-date {
+	background-color: #522A5C;
+}
+.article .label .article-class{
+	background-color: #A65CB7;
+}
+
+
+.article h1 {
+	color: #A65CB7;
+	font-size: 16px;
+
+}
+.article h2 {
+	color: #666;
+	font-size: 12px;
+}
+.article p {
+	color:#000;
+	font-size: 12px;
+	line-height: 170%;
+}
+.article span {
+	display: block;
+	color: #CCC;
+	font-size: 12px;
+
+}
+.page {
+	float: left;
+	margin-bottom: 190px;
+	/* 为了使子元素居中显示*/
+	position: relative;
+	left:50%;
+	
+}
+.page ul {
+	/* 为了使元素居中显示*/
+	position: relative;
+	left:-50%;
+}
+.page ul li {
+	float: left;
+	margin-right: 10px;
+}
+.page ul li a {
+	display: block;
+	background-color: #FFF;
+	color:#CCC;
+	padding: 0 15px;
+	height: 36px;
+	line-height: 36px;
+	font-size: 14px;
+
+}
+
+.page ul li.active a {
+		background-color: #A65CB7;
+ 		color:#FFF;
+}
+
+
+/* **********侧面信息部分********** */
+.side-div {
+	width: 260px;
+}
+.pattern {
+	margin-bottom: 10px;
+	background-color: #FFF;
+	color:#CCC;
+}
+/* **********search 搜索框********** */
+.search {
+	padding:20px;
+}
+/* 通过设置浮动，解决了之前两个行内块之间总有1px空隙的问题 */
+.search input {
+	display: inline;
+	float:left;
+	height: 38px;
+	width:160px;
+	padding-left:8px; 
+	border: 1px solid #CCC;
+	margin:0;
+}
+.search a {
+	display: inline;
+	float:left;
+	background-color: #CCC;
+	padding:0 10px;
+	color:#FFF;
+	font-size: 20px;
+	height: 40px;
+	line-height: 40px;
+	margin:0;
+}
+
+/* **********分类********** */
+ul.pattern li {
+	height:52px;
+	border-left: 4px solid #DFC6E6;
+	border-top: 1px solid #DDD;
+}
+
+ul.pattern li.active {
+	border-left: 4px solid #522A5C;
+}
+
+ul.pattern li a {
+	display: block;
+	padding-left: 16px;
+	text-align: left;
+	line-height: 52px;
+	font-size: 14px;
+	color:#666;
+}
+
+/* **********date 日期********** */
+#date  {
+	padding: 30px 20px;
+}
+#date span a {
+	display: inline-block;
+	padding:0 10px; 
+	color:#773C88;
+}
+#date .now-date {
+	display: block;
+	width:100%;
+	text-align: center;
+	color: #773C88;
+} 
+#date ul {
+	display: block;
+}
+#date ul li {
+	border-bottom: 1px solid #DDD;
+}
+#date ul li ul li {
+	float: left;
+}
+#date ul li ul li a {
+	display: block;
+	width:30px;
+	height:32px;
+	line-height: 32px;
+	color:#888;
+	font-size: 12px;
+	text-align: center;
+}
+#date ul li ul li.active a {
+	background-color: #773C88;
+	color:#FFF;
+}
+#date ul li ul li.holiday a {
+	color:#773C88;
+}
+ 
+/* **********tags 标签********** */
+#tags {
+	padding:10px 20px;
+}
+#tags h3 {
+	text-align: left;
+	font-size: 16px;
+	font-weight: normal;
+}
+#tags p { 
+	padding:10px 0; 
+	color:#773C88;
+	text-indent: 0;
+	line-height: 170%;
+}
+#tags p strong {
+	font-size: 28px;
+	font-weight: bolder;
+}
+#tags p small {
+	font-size: 12px;
+	font-weight: 100;
+}
+#tags p span {
+	font-size: 16px;
+	font-weight: 300;
+}
+
+
+/* **************************************************************gallery.html******************************************************** */
+
+#Tab-menu {
+	background-color: #EEE;
+} 
+
+#Tab-menu li {
+	float: left;
+	display:block;
+	background-color: #FFF;
+	padding:15px 20px 20px;
+	border-top-width: 4px;
+	border-top-style: solid;
+	border-bottom: 1px solid #DDD;
+	border-left: 1px solid #DDD;
+}
+#Tab-menu li a {
+	color:#000;
+}
+#Tab-menu li.active {
+	border-bottom:1px solid #FFF;
+}
+/* 不同颜色的上边框，hover后颜色变化的类active*/
+#Tab-menu #ALL {
+	border-top-color:#DFC6E6;
+	border-left:none;
+}
+#Tab-menu #ALL.active {
+	border-top-color:#522A5C;
+}
+#Tab-menu #JavaScript {
+	border-top-color:#dfc6e6;
+}
+#Tab-menu #JavaScript.active {
+	border-top-color:#522a5c;
+}
+#Tab-menu #UI {
+	border-top-color:#d2a6ff;
+}
+#Tab-menu #UI.active {
+	border-top-color:#5900b2;
+}
+#Tab-menu #Framework {
+	border-top-color:#ffa98c;
+}
+#Tab-menu #Framework.active {
+	border-top-color:#8c2300;
+}
+#Tab-menu #Application {
+	border-top-color:#ffe188;
+}
+#Tab-menu #Application.active {
+	border-top-color:#d9a300;
+}
+
+/* **********瀑布流********** */
+#waterfall {
+	background-color: #FFF;
+	padding: 20px 10px; 
+	margin-bottom: 10px; 
+
+	-webkit-column-gap:10px;
+	-moz-column-gap:10px;
+	-o-column-gap:10px;
+	-ms-column-gap:10px;
+
+	-webkit-column-count:3;
+	-moz-column-count:3;
+	-o-column-count:3;
+	-ms-column-count:3;
+
+/*	-webkit-column-width:220px;
+	-moz-column-width:220px;
+	-o-column-width:220px;
+	-ms-column-width:220px;*/
+
+
+}
+#waterfall .pic-box {
+	margin-bottom: 10px;
+	border:1px solid #CCC;
+	box-shadow: 3px;
+}
+#waterfall .pic-container {
+	padding: 10px 10px 10px 50px;
+	position:relative;
+	color:#FFF;
+}
+
+#waterfall .pic-box img {
+	display: block;
+	width:221px;
+}
+#waterfall .pic-box .pic-container  {
+	width:160px;
+}
+/* 不同的类别的内容显示背景不同 */
+#waterfall .J {
+	background-color: #522A5C;	
+}
+#waterfall .U {
+	background-color: #5900b2;	
+}
+#waterfall .A {
+	background-color: #d9a300;	
+}
+#waterfall .F {
+	background-color: #8c2300;	
+}
+
+.pic-container span {
+	position:absolute;
+	top: 10px;
+	left: 10px;
+	width: 28px;
+	height: 28px;
+	line-height: 28px;
+	border: 1px solid #DDD;
+	border-radius: 28px;
+	font-size: 20px;
+	text-align: center;
+	font-weight: normal;
+}
+
+.pic-container h3 {
+	font-size: 16px;
+	font-weight: normal;
+}
+.pic-container p {
+	text-indent: 0;
+	font-size: 12px;
+	line-height: 170%;
+}
+
+
+.more {
+	width: 100%;
+	background-color: #FFF;
+	text-align: center;
+	margin-bottom:100px; 
+}
+.more a {
+	display: block;
+	line-height: 50px;
+	height: 50px;
+	color:#666;
+}
+
+
+/* **********side侧边栏人气排行榜********** */
+#ranklist {
+	padding: 20px 10px;
+	color:#000;
+}
+#ranklist h3 {
+	font-size: 14px;
+	font-weight: normal;
+	color: #666;
+}
+#ranklist ul {
+	padding-top: 20px;
+}
+#ranklist li {
+	display: block;
+	height: 30px;
+}
+#ranklist .number {
+	display:inline-block;
+	width:18px;
+	text-align: center;
+	color: #FFF;
+	border-radius: 10px;
+	background-color: #522A5C;
+	margin:0 10px 0 0;
+}
+#ranklist .progress {
+	display:inline-block;
+    height: 18px;
+    width: 100px;
+	overflow: hidden;
+	background-color: #f5f5f5;
+	vertical-align: middle;
+	-webkit-box-shadow: inset 0 1px 2px rgba(0, 0, 0, .1);
+    box-shadow: inset 0 1px 2px rgba(0, 0, 0, .1);
+}
+#ranklist .bar {
+	  display: block;
+	  float: left;
+	  width: 0;
+	  height: 100%;
+	  font-size: 12px;
+	  line-height: 20px;
+	  color: #fff;
+	  text-align: center;
+	  background-color: #522A5C;
+	  -webkit-box-shadow: inset 0 -1px 0 rgba(0, 0, 0, .15);
+	          box-shadow: inset 0 -1px 0 rgba(0, 0, 0, .15);
+	  -webkit-transition: width .6s ease;
+	       -o-transition: width .6s ease;
+	          transition: width .6s ease;
+}
+#ranklist .text {
+	display:inline-block#522A5C;
+	font-size: 14px;
+	margin-left: 10px;
+}
+
+
+
+/* *************************************************about.html******************************************* */
+
+.resume {
+	background-color: #EEE;
+	position: relative;
+}
+.resume  p {
+	line-height: 1.7em;
+}
+/* 圆图样式*/
+.resume #header {
+	width: 160px;
+	height: 160px;
+	position: absolute;
+	top:50px;
+	left:50%;
+	margin-left: -80px;
+	border:10px solid #EEE;
+	border-radius: 160px;
+	
+}
+.resume .sample {
+	width: 100px;
+	height: 100px;
+	position: absolute;
+	left:50%;
+	margin-left: -50px;
+	border:4px solid #EEE;
+	border-radius: 100px;
+
+}
+/* 圆图定位*/
+.resume #telephone {
+	top:370px;
+}
+.resume #education {
+	top:590px;
+}
+.resume #internship {
+	top:930px;
+}
+/*阶段定位*/
+.resume h4 {
+	width: 64px;
+	height: 24px;
+	position: absolute;
+	left:50%;
+	margin-left: -32px;
+	border:4px solid #EEE;
+	border-radius: 4px;
+
+	line-height: 24px;
+	text-align: center;
+	font-size: 14px;
+	background-color: #FFF;
+	color:#666;
+}
+.resume #phase1 {
+	top: 710px;
+}
+.resume #phase2 {
+	top: 780px;
+}
+.resume #phase3 {
+	top: 850px;
+}
+
+.resume #first {
+	top: 1050px;
+}
+.resume #second {
+	top: 1420px;
+}
+
+/* 左右两侧内容，也是绝对定位 */
+.left-div, .right-div {
+	margin-top: 100px;
+	margin-bottom: 20px;
+	height:1600px;
+	width:488px;
+	background-color: #FFF;
+}
+
+.left-div {
+	font-size: 20px;
+}
+
+.right-div {
+	font-size: 14px;
+}
+/* 左边定位 */
+.left-div h3 {
+	position: absolute;
+	right:50%;
+	margin-right:78px;
+	font-weight: normal;
+}
+.left-div h3.introduction {
+	top: 230px;
+}
+.left-div h3.contact {
+	top: 490px;
+}
+.left-div h3.education {
+	top: 710px;
+}
+.left-div h3.internship {
+	top: 1050px;
+}
+
+/* 右边定位 */
+.right-div>div{
+	position: absolute;
+	left:50%;
+	margin-left:30px;
+	width:440px;
+}
+.right-div>div>div{
+	position: absolute;
+	left:0;
+}
+
+.right-div div.introduction {
+	top: 230px;
+}
+.right-div div.contact {
+	top: 490px;
+}
+.right-div div.education {
+	top: 710px;
+}
+.right-div div.internship {
+	top: 1050px;
+}
+
+.right-div div.education div.phase1 {
+	top: 20px;
+}
+.right-div div.education div.phase2 {
+	top: 90px;
+}
+.right-div div.education div.phase3 {
+	top: 160px;
+}
+
+.right-div div.internship div.first {
+	top: 20px;
+}
+.right-div div.internship div.second {
+	top: 390px;
+}

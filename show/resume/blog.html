@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>blog</title>
+	<link rel="stylesheet" type="text/css" href="css/style.css" />
+</head>
+<body>
+<div class="content">
+	<div class="header">
+		<div class="model">
+			<h1 class="fl">XUNYUNYUN</h1>
+			<ul class="navigation fr">
+				<li><a href="index.html">首页</a></li>
+				<li><a href="blog.html">文章</a></li>
+				<li><a href="gallery.html">作品</a></li>
+				<li><a href="about.html">关于</a></li>
+			</ul>
+		</div>
+		<a href="https://github.com/xunyunyun" target="_blank"><img src="img/icon-github.png" alt="logo"></a>	
+	</div>
+	<!-- content -->
+	<div class="content-div">
+		<div class="model">
+			<!-- left main -->
+			<div class="main-div fl">
+				<div class="article">
+					<div class="label">
+						<span class="article-date">5.12</span>
+						<span class="article-class">CSS</span>
+					</div>
+					<h1>BFC</h1>
+					<h2>块级格式化上下文</h2>
+					<div>
+					 	<p>什么是BFC：</p>
+					 	<p>BFC(Block formatting context)直译为"块级格式化上下文"。它是一个独立的渲染区域，只有Block-level box参与， 它规定了内部的Block-level Box如何布局，并且与这个区域外部毫不相干。</p>
+					 	<p>BFC布局规则：</p>
+					 	<p>内部的Box会在垂直方向，一个接一个地放置。Box垂直方向的距离由margin决定。属于同一个BFC的两个相邻Box的margin会发生重叠
+    						每个元素的margin box的左边， 与包含块border box的左边相接触(对于从左往右的格式化，否则相反)。即使存在浮动也是如此。
+    						BFC的区域不会与float box重叠。
+    						BFC就是页面上的一个隔离的独立容器，容器里面的子元素不会影响到外面的元素。反之也如此。
+    						计算BFC的高度时，浮动元素也参与计算
+						</p>
+					 	<p>其触发方式：</p>
+					 	<p>float的值不为none;overflow的值为auto,scroll或hidden;
+						display的值为table-cell, table-caption, inline-block中的任何一个;
+						position的值不为relative和static。</p> 
+						<p>其应用：</p>
+						<p>1. 自适应两栏布局；2. 清除内部浮动；3. 防止垂直 margin 重叠</p>
+					 	<span class="fr">xunyunyun 发表于 2015年5月12日</span>
+					 </div>
+				</div>
+				<!-- <code>标签报错 -->
+				<div class="article">
+					<div class="label">
+						<span class="article-date">5.2</span>
+						<span class="article-class">JS</span>
+					</div>
+					<h1>javascript跨域通信</h1>
+					<h2>跨域问题</h2>
+					<div>
+					 	<p>同源：两个文档同源需满足：协议相同、域名相同、端口相同</p>
+					 	<p>跨域通信：js进行DOM操作、通信时如果目标与当前窗口不满足同源条件，浏览器为了安全会阻止跨域操作。跨域通信通常有以下方法：</p>
+					 	<p>如果是log之类的简单单项通信，新建&ltimg&gt,&ltscript&gt,&ltlink&gt,&ltiframe&gt 元素，通过src，href属性设置为目标url。实现跨域请求</p>
+					 	<p>如果请求json数据，使用&ltscript&gt进行jsonp请求</p>
+					 	<p>现代浏览器中多窗口通信使用HTML5规范的targetWindow.postMessage(data, origin);其中data是需要发送的对象，origin是目标窗口的origin。window.addEventListener('message', handler, false);handler的event.data是postMessage发送来的数据，event.origin是发送窗口的origin，event.source是发送消息的窗口引用</p>
+					 	<p>内部服务器代理请求跨域url，然后返回数据</p> 
+					 	<p>跨域请求数据，现代浏览器可使用HTML5规范的CORS功能，只要目标服务器返回HTTP头部Access-Control-Allow-Origin: *即可像普通ajax一样访问跨域资源</p>
+					 	<span class="fr">xunyunyun 发表于 2015年5月2日</span>
+					 </div>
+				</div>
+
+				<div class="article">
+					<div class="label">
+						<span class="article-date">4.20</span>
+						<span class="article-class">其他</span>
+					</div>
+					<h1>我所理解的前端</h1>
+					<h2>web前端做什么</h2>
+					<div>
+					 	<p>我认为前端是架起视觉、交互和后端程序员的桥梁。认为需要做到以下几点：</p>
+					 	<p>1.对于一个产品，需要了解产品的设计和交互实现的细节，从而使前端代码结构更加的合理，及可扩展性比较强。</p>
+					 	<p>2.随着智能设备的更新换代，前端需要能够处理各种浏览器和设备的兼容问题。</p>
+					 	<p>3.用最精简的代码和最高的效率实现交互和设计的细节，可用性和可访问性的提升。</p>
+					 	<p>4.把握住新技术和用户体验的结合，使得web和移动应用有更优和更加合理的实现方式。</p>
+					 	<p>5.实现网站的前端性能优化。</p> 
+					 	<span class="fr">xunyunyun 发表于 2015年4月20日</span>
+					 </div>
+				</div>
+				<div class="article">
+					<div class="label">
+						<span class="article-date">4.12</span>
+						<span class="article-class">HTML</span>
+					</div>
+					<h1>web语义化</h1>
+					<h2>什么是web语义化,有什么好处</h2>
+					<div>
+					 	<p>web语义化是指通过HTML标记表示页面包含的信息，包含了HTML标签的语义化和css命名的语义化。
+							HTML标签的语义化是指：通过使用包含语义的标签（如h1-h6）恰当地表示文档结构
+							css命名的语义化是指：为html标签添加有意义的class，id补充未表达的语义，如Microformat通过添加符合规则的class描述信息
+						</p>
+					 	<p>为什么需要语义化：</p>
+					 	<p>1.去掉样式后页面呈现清晰的结构</p>
+					 	<p>2.盲人使用读屏器更好地阅读</p>
+					 	<p>3.搜索引擎更好地理解页面，有利于收录</p>
+					 	<p>4.便团队项目的可持续运作及维护</p> 
+					 	<span class="fr">xunyunyun 发表于 2015年4月12日</span>
+					 </div>
+				</div>
+
+				<div class="page">
+					<ul>
+						<li><a href="#">第一页</a></li>
+						<li><a href="#">上一页</a></li>
+						<li><a href="#">1</a></li>
+						<li><a href="#">2</a></li>
+						<li class="active"><a href="#">3</a></li>
+						<li><a href="#">4</a></li>
+						<li><a href="#">...</a></li>
+						<li><a href="#">下一页</a></li>
+						<li><a href="#">最后页</a></li>
+					</ul>
+				</div>
+
+
+
+			</div>
+
+
+
+			<!-- right side -->
+			<div class="side-div fr">
+				<div class="pattern search clearfix">
+					<input type="text" placeholder="keywords"/>
+					<a href="#">go</a>
+					<!--  <span id="search-btn"><a href="#">go</a><span> -->
+				</div>
+				<ul class="pattern">
+					<li><a href="#">HTML</a></li>
+					<li class="active"><a href="#">CSS</a></li>
+					<li><a href="#">JavaScript</a></li>
+					<li><a href="#">其他文章</a></li>	
+				</ul>
+
+				<div class="pattern" id="date">
+					<span class="fl"><a href="#">&lt;</a></span>
+					<span class="fr"><a href="#">&gt;</a></span>
+					<span class="now-date">2015.04</span>
+					<div class="clearfix">
+						<ul class="row">
+							<li>
+								<ul class="col">
+									<li><a href="#">M</a></li>
+									<li><a href="#">T</a></li>
+									<li><a href="#">W</a></li>
+									<li><a href="#">T</a></li>
+									<li><a href="#">F</a></li>
+									<li><a href="#">S</a></li>
+									<li><a href="#">S</a></li>
+								</ul>
+							</li>
+							<li>
+								<ul>
+									<li><a href="#">1</a></li>
+									<li><a href="#">2</a></li>
+									<li><a href="#">3</a></li>
+									<li><a href="#">4</a></li>
+									<li><a href="#">5</a></li>
+									<li class="active"><a href="#">6</a></li>
+									<li><a href="#">7</a></li>
+								</ul>
+							</li>
+							<li>
+								<ul>
+									<li><a href="#">8</a></li>
+									<li><a href="#">9</a></li>
+									<li><a href="#">10</a></li>
+									<li><a href="#">11</a></li>
+									<li class="holiday"><a href="#">12</a></li>
+									<li><a href="#">13</a></li>
+									<li><a href="#">14</a></li>
+								</ul>
+							</li>
+							<li>
+								<ul>
+									<li><a href="#">15</a></li>
+									<li><a href="#">16</a></li>
+									<li><a href="#">17</a></li>
+									<li><a href="#">18</a></li>
+									<li><a href="#">19</a></li>
+									<li><a href="#">20</a></li>
+									<li><a href="#">21</a></li>
+								</ul>
+							</li>
+							<li>
+								<ul>
+									<li><a href="#">22</a></li>
+									<li><a href="#">23</a></li>
+									<li><a href="#">24</a></li>
+									<li><a href="#">25</a></li>
+									<li  class="holiday"><a href="#">26</a></li>
+									<li><a href="#">27</a></li>
+									<li><a href="#">28</a></li>
+								</ul>
+							</li>
+						</ul>
+					</div>
+				</div>
+
+				<div class="pattern" id="tags">
+					<h3>Tags</h3>
+					<p>
+						<strong>Javascript</strong>
+						<big>CSS</big>
+						<small>flex</small>
+						<span>WebGL</span>
+						<strong>HTML</strong>
+						<span>Canvas</span>
+						<span>prototype</span>
+						<big>HTML5</big>
+						<small>grid</small>
+						<span>nodeJS</span>
+						<span>CSS3</span>
+						<big>jQuery ECharts</big>
+
+					</p>
+					
+				</div>
+
+
+				
+			</div>
+		</div>
+	</div>
+	
+
+	<div class="footer">
+		<div class="model">
+			<ul class="classes clearfix">
+				<li><a href="index.html">主页</a></li>
+				<li><a href="blog.html">文章</a></li>
+				<li><a href="gallery.html">作品</a></li>
+				<li><a href="about.html">关于</a></li>
+			</ul>
+		</div>
+		<div class="line"></div>
+		<div class="model">
+			<ul class="menu clearfix">
+				<li class="notlast">
+					<dl>
+						<dt>学习资料</dt>
+						<dd>Link</dd>
+						<dd><a href="#">Hover时样式</a></dd>
+						<dd>Link</dd>
+						<dd>Link</dd>
+						<dd>Link</dd>
+						<dd>Link</dd>
+					</dl>
+				</li>
+				<li class="notlast">
+					<dl>
+						<dt>友情链接</dt>
+						<dd>Link</dd>
+						<dd><a href="#">Hover时样式</a></dd>
+						<dd>Link</dd>
+						<dd>Link</dd>
+					</dl>
+				</li>
+				<li class="notlast">
+					<dl>
+						<dt>学习资料</dt>
+						<dd>Link</dd>
+						<dd><a href="#">Hover时样式</a></dd>
+						<dd>Link</dd>
+						<dd>Link</dd>
+						<dd>Link</dd>
+						<dd>Link</dd>
+					</dl>
+				</li>
+				<li class="notlast">
+					<dl>
+						<dt>友情链接</dt>
+						<dd>Link</dd>
+						<dd><a href="#">Hover时样式</a></dd>
+						<dd>Link</dd>
+						<dd>Link</dd>
+					</dl>
+				</li>
+				<li>
+					<dl>
+						<dt>学习资料</dt>
+						<dd>Link</dd>
+						<dd><a href="#">Hover时样式</a></dd>
+						<dd>Link</dd>
+						<dd>Link</dd>
+						<dd>Link</dd>
+						<dd>Link</dd>
+					</dl>
+				</li>
+			</ul>
+			<p>版权信息</p>
+			<a href="https://github.com/xunyunyun" target="_blank"><img src="img/icon-github.png" alt="logo"></a>
+		</div>
+	</div>
+</div>
+	
+</body>
+</html>
