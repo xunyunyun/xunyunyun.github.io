@@ -129,6 +129,9 @@ a.navbar-brand:hover {
 .post-About .container,.post-Demo .container {
 	box-shadow: 0 0 10px #AAA;
 }
+footer .container {
+	box-shadow: none;
+}
 .page-content {
 	box-shadow: 0 0 10px #AAA;
 }
