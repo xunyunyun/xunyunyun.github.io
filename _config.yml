@@ -13,4 +13,5 @@ permalink: /:year/:month/:day/:title/
 # markdown: kramdown
 
 markdown: kramdown
+highlighter: rouge
 permalink: /:categories/:title.html
