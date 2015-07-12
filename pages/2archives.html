@@ -5,10 +5,10 @@ permalink: /archives/
 icon: glyphicon-file
 ---
 <div class="row">
-  <div class="col-sm-10 col-xs-9">
-    <div class="section-left">
+	<div class="col-sm-10 col-xs-9">
+		<div class="section-left">
       <div class="near">
-        <ul class="list-unstyled">
+  			<ul class="list-unstyled">
           {% for post in site.posts limit:10 %} 
             <li>            
                 <h3><a href="{{ post.url }}">{{ post.title }}</a></h3>
@@ -16,7 +16,7 @@ icon: glyphicon-file
                 <p class="clearfix"><a href="{{ post.url }}"><span class="fl">阅读全文 &raquo; </span></a><span class="fr">{{ post.date | date: "%Y年-%m月-%d日" }}</span></p>    
             </li> 
           {% endfor %}
-        </ul> 
+  			</ul> 
       </div>
       <!-- 添加年份 -->
       <div class="base-year">
@@ -31,10 +31,10 @@ icon: glyphicon-file
         </ul>
       </div>
 
-    </div>
-  </div>
-  <div class="col-sm-2 col-xs-3">
-    
+		</div>
+	</div>
+	<div class="col-sm-2 col-xs-3">
+		
       <!-- 添加时间轴 -->
       <ul class="timeline yearline">
           <li id="near" class="active"><a href="">最近</a></li>
@@ -77,5 +77,5 @@ icon: glyphicon-file
 
         
 
-  </div>
+	</div>
 </div>
