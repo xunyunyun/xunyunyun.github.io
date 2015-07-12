@@ -8,7 +8,7 @@ tags: ["月影课堂问题"]
 ####1.判断是否为素数
 
 {% highlight javascript %}
-<script type="text/javascript">
+
 function isPrime(number){
     var temp = Math.sqrt(number);
     if(number <= 1){ return false;}
@@ -21,6 +21,6 @@ function isPrime(number){
     return result;
 }
 console.log(isPrime(7));
-</script>
+
 {% endhighlight %}
 
