@@ -95,6 +95,9 @@ position: relative; left: -50%;
     绝对定位元素不在普通流中渲染，因此margin: auto可使内容通过{ top: 0; left:0; bottom: 0; right: 0;}实现边界内居中
     给内容块元素设置padding也不影响内容块元素的绝对居中实现。
 
+参考于[盘点8种CSS实现垂直居中水平居中的绝对定位居中技术](http://blog.csdn.net/freshlover/article/details/11579669)|
+[6 Methods For Vertical Centering With CSS](http://www.vanseodesign.com/css/vertical-centering/)
+
 #####**2.不定宽高（负外边距居中）**
 
 ```
