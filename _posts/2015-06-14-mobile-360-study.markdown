@@ -1,0 +1,408 @@
+---
+layout: post
+category: "mobile"
+title:  "移动端基础（瓜瓜老师）"
+tags: ["mobile"]
+---
+
+####内置浏览器：
+
+	IOS：safari
+	Windows Phone：IE
+	Android 2.X和大部分Android 4.x：安卓Webkit
+	Chrome拥有的Nexus：Google chrome
+	Android 4.4+ 三星使用的三星chrome
+	Amazon：silk
+
+可下载浏览器: firefox , Opera, UC, QQ, 360
+
+移动端浏览器都是高级浏览器
+
+对HTML5和CSS3有很好的支持，所以我们不用考虑兼容性问题。
+
+####HTML5：
+
+	语义化标签：header  footer  nav  artcle  main  aside
+	离线存储：可使用Localstorage存储信息到用户的设备中
+	localStorage.getItem
+	localStorage.setItem
+	地理位置：移动特性，使用Navigate.getlocation来说明用户地理位置
+	设备转向和螺旋仪：摇一摇，devicemotion事件：获取设备x/y/z方向上的加速度
+
+####CSS3特性
+
+圆角与阴影
+
+渐变背景
+
+变形：平移、旋转、缩放
+
+变换和动画
+
+####交互：
+ 
+![house-icon]({{"/img/interactive.jpg" | prepend:site.baseurl}})
+
+
+####开发与调试（教程）
+
+设备：尺寸。旋转
+
+媒介：print  screen
+
+网络：userAgent，网速
+
+传感：触摸、地理位置
+
+
+####CSS像素
+
+设备像素比：DevicePixelRatio = 设备像素/CSS像素
+
+解决不同移动设备下视觉效果。
+
+####视口（viewPort）
+
+布局视口：CSS布局会被他约束。document.documentElement.width/height
+
+视觉视口：用户屏幕中看到区域的CSS像素 window.innerWidth/Height
+
+理想视口：浏览器认为对设备来说最合适的布局视口的大小
+
+	放大效果：视觉视口变小了，布局视口没有变化。
+
+通过这句话设置：
+{% highlight html %}
+<meta name = “view” content=”width=device-width,initial-scale=1”>
+{% endhighlight %}
+
+	width：布局视口宽度
+	initial-scale：页面的初始缩放程度和布局视口的宽度
+	minimum-scale：最小缩放程度
+	maxmum-scale：最大缩放程度
+	user-scalable：是否可缩放
+
+
+####媒体查询（Media Query）
+针对不同屏幕应用不同的样式
+{% highlight html %}
+<link rel="stylesheet" href="m.css" media="screen and (max-width:480px)"/>
+{% endhighlight %}
+或者：
+{% highlight html %}
+ <style type = “text/css”>
+@media screen and (min-width:480){
+	.selector {}
+}
+</style>
+{% endhighlight %}
+
+媒体查询
+
+	(min/max-)width/height
+	orientation 方向
+		```oritation：landscape ```代表横屏
+	resolution 分辨率
+	device-pixel-ratio
+	(min/max-)aspect-ratio
+	Device-width, device-height, device-aspect-ratio不可靠
+
+####弹性布局
+
+页面的body宽度为100%
+
+自适应布局
+
+display：table 支持性很好！CSS2.1支持
+
+**CSS3 Flex Box 是w3c的终极武器**
+
+|CSS |html |
+| :-------- | :--------|
+|display: table                |<table>|
+|display: table-cell             |<td>|
+|display: table-row             |<tr>|
+|display: table-column          |<col>|
+|display: table-column-group     |<colgroup>|
+|display: table-footer-group      |<tfoot>|
+|display: table-header-group     |<thead>|
+
+
+#####多栏自适应等高布局
+
+Display：table实现多栏等高布局
+{% highlight html %}
+<div class="wrap">
+  <div class="side">Side</div>
+  <div class="main">Main</div>
+  <div class="extra">Extra</div>
+</div>
+{% endhighlight %}
+
+{% highlight css %}
+/*
+ * 使用display:table实现多栏、等高、垂直居中布局
+ */
+.wrap { 
+  display: table; 
+  width: 100%; 
+}
+.wrap>div { 
+  display: table-cell; 
+  /* 垂直居中 */
+  vertical-align: middle;
+}
+.side { 
+  width: 100px;
+  height: 250px;
+}
+.extra {
+  width: 100px;
+}
+/*
+ * 无关的样式
+ */
+.wrap {
+  font: 28px/1.6 sans-serif;
+  color: white;
+}
+.wrap>div {
+  padding: 20px;
+}
+.side { 
+  background: #f44; 
+}
+.main { 
+  background: #09c; 
+}
+.extra { 
+  background: #f60; 
+}
+{% endhighlight %}
+
+#####Flexbox
+水平或垂直排成一行
+控制子元素对齐方式
+控制子元素的宽度、高度
+控制子元素的显示顺序
+控制子元素是否折行
+ 
+Demo：
+
+Html：
+{% highlight html %}
+<div class="container">
+	<div class="item1">Item 1. Flexbox Rocks!</div>
+	<div class="item2">Item 2. Go for it! CSS Tricks' A Complete Guide to Flexbox provides strong reference documentation for all properties and valuesiew of the spec.</div>
+	<div class="item3">Item 3. Flexbox has a funny history.</div>
+</div>
+{% endhighlight %}
+
+CSS：
+{% highlight css %}
+/**
+ * flex box
+ */
+.container {
+	/* flex | inline-flex */
+	display: flex;
+	
+	/* 伸缩流(主轴)方向 row 水平 | row-reverse | column 垂直 | column-reverse */
+	flex-direction: row;
+	
+	/* 主轴对齐 flex-start 左 | flex-end 右 | center 中 | space-between n-1个空格 | space-around n+1个空格*/
+	justify-content: flex-start;
+	
+	/* 侧轴对齐 flex-start | flex-end | center | baseline | stretch 拉伸成等高 */
+	align-items: stretch;
+	
+	/* 伸缩行换行 nowrap 不换行 | wrap 换行 | wrap-reverse */
+	flex-wrap: wrap;
+	
+	/* 对齐伸缩行 stretch 根据高度拉伸 | flex-start 顶对齐 | flex-end | center | space-between | space-around */
+	align-content: stretch;
+	//height: 1000px;
+}
+
+/*
+ * order 显示顺序
+ */
+.item1 { order: 3; }
+.item2 { order: 2; }
+.item3 { order: 1; }
+
+/*
+ * flex 伸缩因子 
+ * 第一个参数：没有剩余宽度大小 可为auto
+ * 第二个参数：填满剩余空间（比例）
+ * 第三个参数：空间不足时，需要从其他box抽出多少（比例）
+ */
+.item1 { flex: 100px 1 1; }
+.item2 { flex: 100px 2 1; }
+.item3 { flex: 100px 1 1; }
+
+/*
+ * 侧轴对齐
+ */
+.item1 { align-self: auto; }
+
+/*
+ * margin auto
+ */
+.item1 {
+	margin-right: 0;
+}
+/* 垂直居中最简方案，为标准鼓掌！
+ * .container { display: flex; }
+ * .child { margin: auto; }
+ */
+ 
+/* http://philipwalton.github.io/solved-by-flexbox/ */
+
+/*
+ * 无关的属性
+ */
+.container {
+	color: #fff;
+	border: 3px solid #666;
+	font-family: sans-serif;
+}
+.container > div {
+	padding: 10px;
+	width: 120px;
+}
+.item1 {
+	background: #f44;
+	font-size: 32px;
+}
+.item2 {
+	background: #09c;
+}
+.item3 {
+	background: #f60;
+}
+{% endhighlight %}
+**Flexbox学习最新的，可以用工具解决兼容性问题**：[flexbox转化](http://pleeease.io/play/)
+
+#####图片
+
+液态图片:img { max-width: 100%; }
+
+使用2x 图片 （IE下基本不支持）
+
+	width:200px的img，使用分辨率宽为400的图片
+	background-size: 50% auto;
+	srcset和picture
+
+{% highlight html %}
+<img src="low-res.jpg" srcset="high-res.jpg 2x"> 
+<picture> 
+  <source srcset="med.jpg 1x, med-hd.jpg 2x" media="(min-width: 40em)" />  
+  <source srcset="sm.jpg 1x, sm-hd.jpg 2x" />  
+  <img src="fallback.jpg" alt="" /> 
+</picture>
+{% endhighlight %}
+
+####响应式javascript
+
+使用matchMedia
+
+	if(matchMedia(‘screen and (min-width:480px)’).matches){
+	}
+
+处理orientationChange事件
+
+	Window.addEventListener(“oritationchange”,function(){
+		Alert(“the orientation of the device is now” +screen.orientation);
+	});
+
+Test demo
+
+Html:
+{% highlight html %}
+<nav>
+  <ul class="nav-list">
+    <li><i class="icon-home"></i></li>
+    <li>Blog</li>
+    <li>Gallery</li>
+    <li>Project</li>
+    <li>About</li>
+  </ul>
+</nav>
+{% endhighlight %}
+CSS:
+{% highlight css %}
+/*
+ * 使用flex-box实现自适应导航条
+ */
+.nav-list {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+.nav-list li {
+  flex: auto 1 1;
+}
+.nav-list li:first-child {
+  flex-grow: 0.000001;
+}
+/*
+ * 无关的样式
+ */
+body {
+  font: 18px/1.6 sans-serif;
+}
+.nav-list {
+  background: #f88;
+  line-height: 50px;
+  color: white;
+  font-size: 20px;
+}
+.nav-list li {
+  border-bottom: 1px solid white;
+  text-align: center;
+}
+.nav-list li+li {
+  border-left: 1px solid white;
+  padding: 0 15px;
+}
+.nav-list li:nth-child(1) {
+  background: #0099CC;
+  font-size: 40px;
+  padding: 0 10px;
+}
+{% endhighlight %}
+
+####移动端事件
+
+鼠标事件：mousedown  mousemove  mouseup  click
+
+Touch事件: touchstart  touchmove  touchend
+
+#####Click延迟
+
+手机上的click事件有约300ms的延迟，因为浏览器要判断是否为双击缩放行为
+
+	部分浏览器，会在页面不可缩放时取消延时
+	Google Chrome 会在Viewport Meta的content设为device-width时取消延时
+	IE会在CSS的touch-action设为manipulation时取消延时
+	Safari无法取消延时
+解决办法
+
+	使用touch事件模拟tap轻触行为。
+
+#####touchEvent
+
+有三个touchList类型的关键属性
+
+touchlist里的每一项结构与MouseEvent类似
+
+{% highlight javascript %}
+window.ontouchstart = function(e) {
+	console.log(e.touches);  // 屏幕上所有手指
+console.log(e.targetTouches);  // 当前元素上的手指
+console.log(e.changedTouches);  // 有变化的手指
+console.log(e.changedTouches[0].clientX); //获得第一个手指相对于视觉视口的横向偏移
+console.log(e.changedTouches[0].pageX); //获得第一个手指相对于布局视口的横向偏移
+}
+{% endhighlight %}

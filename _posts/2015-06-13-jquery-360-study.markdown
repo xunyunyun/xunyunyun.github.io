@@ -1,0 +1,400 @@
+---
+layout: post
+category: "blog"
+title:  "jquery学习(岳文老师)"
+tags: ["blog"]
+---
+
+####jQuery特点
+
+轻量级、兼容CSS3（新的选择器）、跨浏览器、简单好用
+
+###关于jquery 2.X版本
+
+不支持IE6、7、8；更加轻量（减小20%）；模块化，可定义更小的版本：兼容1.X的API。
+
+
+
+####**选择器**
+
+	document.getElementById
+	document.getElementsByName
+	document.getElementsByTagName
+	document.querySelector
+	document.querySelectorAll
+	document.getElementsByClassName
+
+####基本筛选
+
+	:animated 所有动画
+	:first   $("p:first") 第一个<p>
+	:last   最后一个
+	:gt()   $("ul li:gt(3)") 为选取index值高于指定数3的元素
+	:lt()  为选取index值低于指定数的元素
+	:header  $(":header") 所有标题元素<h1>-<h6>
+	:not(selector)  $("input:not(:empty)") 所有不为空的input元素
+	:odd  $("tr:odd") 所有奇数<tr>元素
+	:even  所有偶数   可用于实现表格的斑马线
+	内容筛选
+	.contains(text)  $(":contains("w3School")")包含指定字符串的所有元素 
+	:empty  $(":empty") 为无子节点的所有元素
+	:has() 
+	:parent
+
+####可见筛选
+
+	:hidden $("p:hidden") 所有隐藏的<p>元素
+	:visible 可见的
+
+####属性筛选
+
+	[name |= "value"]  选取带有以指定值开头的属性值的元素，该值必须是整个单词
+	[name *= "value"]   选取属性值中包含指定值的每个元素
+	[name ~= "value"]  选取属性值中包含指定词汇的元素
+	[name $= "value"]   结尾的
+	[name = "value"]    为
+	[name != "value"]    不为
+	[name ^= "value"]    name属性
+	[name] 有name属性的
+
+####元素筛选性能如何？
+
+Id最高，:hidden最差
+
+
+####排版引擎渲染流程
+ ![house-icon]({{"/img/rendering-engine.jpg" | prepend:site.baseurl}})
+
+DOMtree与style rules如何attachment呢？
+
+**选择器的解析方式**：从右向左解析
+
+####选择器优化：
+
+	ID>Tag>class>querySelector
+	选择器逆向解析，从右向左;避免使用通配符
+	自定义选择器比原生要慢
+	使用子查询，如find、filter等
+	在选择class之前使用tag
+	JQuery中所有的选择器都是用正则去匹配的，较慢，所以选择器应该尽量短。
+
+####**jQuery操作**
+常用方法：
+
+	$(‘#id’).data()
+	.val()
+	.css()
+	.addClass()
+	.width()
+
+
+
+####js事件绑定：
+
+W3c下：
+	addEventListener(event type, event handler, useCapture)
+	useCapture=false; 表示事件冒泡
+IE下：
+	attachEvent(event type, event handler)
+
+jquery的事件绑定:
+	.event 包括click,change,focus,blur等等  $("body").click(function(){})
+	.one   $("body").one("click",function(){});
+	.bind/unbind   $("body").bind("click",function(){});
+	.live/die  $("body").l("click",function(){});
+	Live不建议：不支持链式；事件被添加到document元素上；阻止事件效率低
+	.delegate/undelegated  $("ul").delegate("li" , "click" , function(){})   事件代理
+	.on/off  $("ul").on("click" ,"li" , function(){})
+
+####事件优化：
+	Event Delegation
+	避免使用live
+	直接使用on/off
+
+来触发某元素的事件click
+$("#id").trigger(" click ")
+
+
+####**Jquery动画**
+
+	hide() 相当于display：none；
+	show() 对应display：block；
+	toggle() 
+
+渐变：
+	.fadeIn()
+	.fadeOut()
+	.fadeTo()
+	.fadeToggle()
+
+滑动
+	.slidedown()
+	.slideup()
+	.slidetoggle()
+
+动画
+	$("#box").animate({
+		Width:"400px",
+		Height:"300px",
+	},1000);
+
+队列相关的方法
+
+	.queue()方法显示或操作在匹配元素上执行的函数队列
+	.unqueue()
+	.clearQueue()  清空
+	.delay()  延迟，毫秒级
+	.stop()  暂停
+	.finish()  直接到最终状态
+
+####**Jquery异步**
+
+{% highlight javascript %}
+$.ajax({
+	"url": "",
+    "data": {},
+    "async": true,
+    "cache": true,
+    "type": "GET",
+    "timeout": "3000",
+    "dataType": "jsonp",
+    "success": function(d){},
+    "error": function(err){},
+    "complete": function(d){}
+})
+{% endhighlight %}
+
+$.ajax实现Promise接口
+
+{% highlight javascript %}
+$.ajax({
+	"url":"",
+	"date":{},
+	"dataType":"jsonp"
+}).done(function(d){}).fail(function(){}).always(function(){})
+{% endhighlight %}
+
+
+{% highlight javascript %}
+$.ajax({
+    "url": "http://open.onebox.haosou.com/dataApi/getWeatherSheepTalk",
+    "data": {
+        "addInfo": "1_0|2_0|3_0",
+        "src": "onebox"
+    },
+    "async": true,
+    "cache": true,
+    "type": "GET",
+    "dataType": "jsonp",
+    //"timeout": "10"
+}).done(function(d){
+    console.log("done", d);
+}).fail(function(err){
+    console.log("fail", err);
+}).always(function(){
+    console.log("always");
+})
+{% endhighlight %}
+
+####Fetch API 
+Fetch API 存在很大的兼容性问题
+
+{% highlight javascript %}
+fetch("http://open...").then(
+function(d){console.log(d);}
+,function(err){console.log("error:", err);
+})
+{% endhighlight %}
+
+Fetch规范的API明确了用户代理获取资源的语义。结合了serviceWorkers,尝试达到以下优化：
+1.改善离线体验
+2.保持可扩展性
+在fetch API中，最常用的就是fetch()函数，它接收一个参数，返回一个promise来处理。Response参数带着一个Response对象。
+
+{% highlight javascript %}
+fetch("/data.json").then(function(res) {
+  // res instanceof Response == true.
+  if (res.ok) {
+    res.json().then(function(data) {
+      console.log(data.entries);
+    });
+  } else {
+    console.log("Looks like the response wasn't perfect, got status", res.status);
+  }
+}, function(e) {
+  console.log("Fetch failed!", e);
+});
+{% endhighlight %}
+
+如果是提交一个POST请求，代码如下：
+
+{% highlight javascript %}
+fetch("http://www.example.org/submit.php", {
+  method: "POST",
+  headers: {
+    "Content-Type": "application/x-www-form-urlencoded"
+  },
+  body: "firstName=Nikhil&favColor=blue&password=easytoguess"
+}).then(function(res) {
+  if (res.ok) {
+    alert("Perfect! Your settings are saved.");
+  } else if (res.status == 401) {
+    alert("Oops! You are not authorized.");
+  }
+}, function(e) {
+  alert("Error submitting form!");
+});
+{% endhighlight %}
+
+fetch()函数的参数和传给Request()构造函数的参数保持完全一致，所以你可以直接传任意复杂的request请求给fetch()。
+
+
+####$.Deferred延迟对象
+
+{% highlight javascript %}
+deferred = $.Deferred()
+deferred.done(Fun)
+deferred.fail(Fun)
+deferred.then(Fun,Fun)
+deferred.always(Fun)
+deferred.resolve()
+deferred.reject()
+deferred.promise()
+$.when(deferred)
+{% endhighlight %}
+
+{% highlight javascript %}
+var d1 = $.Deferred();
+var d2 = $.Deferred();
+	$.when( d1, d2 )
+		.done(function ( v1, v2 ) {
+			console.log( v1 );
+			console.log( v2 );
+		})
+		.fail(function(v2){
+			console.log(v2)
+		})
+{% endhighlight %}
+
+$.ajax返回一个deferred对象
+
+{% highlight javascript %}
+var getIP = $.ajax({
+	url:’http://api.ip.360.cn’,
+	dataType:’jsonp’,
+timeout:1000
+});
+{% endhighlight %}
+
+
+####$.Deferred.promise()
+
+	支持版本>1.6
+	Derferred的子集
+	可以受理特定动作（action）队列
+	返回动态生成的promise
+
+{% highlight javascript %}
+var wait = function(){
+	var dtd = $.Deferred(); //在函数内部，新建一个Deferred对象
+	var tasks = function(){
+		alert("执行完毕！");
+　　　　dtd.resolve(); // 改变Deferred对象的执行状态
+　　　}; 
+　　  setTimeout(tasks,5000);
+　　　return dtd.promise(); // 返回promise对象
+　};
+　$.when(wait())              //为条件判断
+　.done(function(){ alert("哈哈，成功了！"); })
+　.fail(function(){ alert("出错啦！"); });
+{% endhighlight %}
+
+输出结果先是"执行完毕"，再是"哈哈，成功了"。因为有deferred对象，在返回promise对象之后才可以执行done（个人理解）
+
+{% highlight javascript %}
+$(elem).promise
+$("div").each(function(i){
+	$(this).fadeIn().fadeOut(1000*(i+1));
+});
+$("div").promise().done(function(){
+	$("p").append("Finished!");
+});
+{% endhighlight %}
+
+Example：
+Html如下
+{% highlight html %}
+<button>Go</button>
+<p>Ready...</p>
+<div></div>
+<div></div>
+<div></div>
+<div></div>
+{% endhighlight %}
+CSS如下
+
+{% highlight css %}
+div {
+  height: 50px; width: 50px;
+  float: left; margin-right: 10px;
+  display: none; background-color: #090;
+}
+{% endhighlight %}
+
+Js如下
+{% highlight javascript %}
+$("button").bind( "click", function() {
+  $("p").append( "Started...");
+ 
+  $("div").each(function( i ) {
+    $( this ).fadeIn().fadeOut( 1000 * (i+1) );
+  });
+ 
+  $( "div" ).promise().done(function() {
+    $( "p" ).append( " Finished! " );
+  });
+});
+{% endhighlight %}
+
+执行结果为start…然后执行淡入淡出，在之后finished; 无论这三个函数在click执行函数中的顺序怎么变化，执行结果都一样！即不管怎样finish都是等到其他执行完成再执行！
+
+{% highlight javascript %}
+var effect = function(){
+	return $("div").fadeIn(800).delay(1200).fadeOut();
+}
+$.when( effect() ).done( function(){   // 在effect函数执行完毕后，再执行done中的function
+	$("p").append(" Finished! ");
+})
+{% endhighlight %}
+
+执行淡入淡出，之后finished！
+表示为当effect代表的函数执行完成，在执行done中的函数。
+
+####**其他框架**
+PC框架：Qwrap 、 YUI 、Prototype
+
+移动框架：zepto.Js   iScroll
+
+ZeptoJs应用：[360好搜音乐(移动端)](http://m.haosou.com/s?q=%E5%86%B0%E9%9B%A8)
+
+iScroll应用：[360好搜天气(移动端)](http://m.haosou.com/s?q=%E5%A4%A9%E6%B0%94)
+
+Web app:  Angularjs  Backbone
+
+Angularjs 应用：[360好搜音乐(移动端)](http://m.music.haosou.com/)
+
+矢量：Raphael   D3
+
+动画：Cocos2d  three.js
+
+####**学习工具**
+
+奇舞周刊
+
+MDN
+
+Can I use
+
+HTML5 Rocks
+
+CSS-TRICKS
