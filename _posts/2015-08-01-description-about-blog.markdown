@@ -17,7 +17,7 @@ tags: ["blog"]
 
 ####关于博客文章
 
-#####**所有7月1号之前的博客文章，均来自于[Panxw's Blog(http://www.panxw.com/)](http://www.panxw.com/)。特此声明！！！**
+#####**所有7月1号之前的博客文章，均来自于[Panxw's Blog(http://www.panxw.com/)](http://www.panxw.com/)。特此声明！！！**之所以引用他人博客文章是为了展示模板效果，时间轴效果和分类效果。
 
 #####通过学习[markdown语法说明](http://wowubuntu.com/markdown/index.html)|[Markdown，你只需要掌握这几个](https://www.zybuluo.com/AntLog/note/63228#171-%E8%AF%B4%E6%98%8E)，自己写了关于几篇CSS相关的博客。
 
