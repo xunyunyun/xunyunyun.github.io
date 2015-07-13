@@ -34,7 +34,13 @@ ul,li {
 .fr { 
 	float:right;
 }
-
+/*table*/
+table tbody tr:nth-of-type(even),table thead tr{
+	background-color: #EEE;
+}
+table tr td:nth-of-type(n+1),table tr th:nth-of-type(n+1) {
+	padding-left: 10px;
+}
 
 
 

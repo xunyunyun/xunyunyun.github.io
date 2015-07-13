@@ -37,7 +37,7 @@ icon: glyphicon-heart
 |2015.4.27      |  跟进百度前端技术学院的任务，学习其提供的学习资料，完成了任务[个人简历](http://xunyunyun.github.io/show/resume/index.html)。||
 |2015.4         |  前端实习笔试、面试等，总结自己前端知识体系的不足，查缺补漏中。|
 |2015.3         |  做实验室项目，运用所学知识开始做一些demo，[2048小游戏](http://xunyunyun.github.io/show/2048game/index.html)、[移动web相册](http://xunyunyun.github.io/show/mobile_web_album/index.html)、[CSS3照片墙](http://xunyunyun.github.io/show/picture_wall/index.html)、[canvas实现小球滚动](http://xunyunyun.github.io/show/ball_move/index.html)、[瀑布流](http://xunyunyun.github.io/show/waterfalldemo/index.html)、[仿新浪微博](http://xunyunyun.github.io/show/xinlang/index.html)等。|
-|2015.1         |  仔细阅读《HTTP权威指南》|
+|2015.1         |  仔细阅读《HTTP权威指南》、《javascript语言精粹》、《精通CSS：高级文本标准解决方案》等|
 |2014.12	       |  巩固前端基础知识，仔细阅读《javascript高级程序设计》和《javascript权威指南》，并动手实现书中程序案例。|
 |2014.5         |  完成demo中[整站搭建](http://xunyunyun.github.io/show/website/index.html)|
 |2014.4	       |  尝试一些网站开发， [妙味课堂](http://www.miaov.com/2013/)学习psd切图、网站制作等。|
@@ -50,3 +50,7 @@ icon: glyphicon-heart
 ### 学习资源
 
 [w3cplus](http://www.w3cplus.com/) \| [css tricks](http://css-tricks.com/) \| [汤姆大叔的博客](http://www.cnblogs.com/TomXu/) \| [慕课网](http://www.imooc.com) \| [前端乱炖](http://www.html-js.com/)
+
+
+
+
