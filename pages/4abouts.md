@@ -49,7 +49,7 @@ icon: glyphicon-heart
 
 ### 学习资源
 
-[w3cplus](http://www.w3cplus.com/) \| [css tricks](http://css-tricks.com/) \| [汤姆大叔的博客](http://www.cnblogs.com/TomXu/) \| [慕课网](http://www.imooc.com) \| [前端乱炖](http://www.html-js.com/)
+[MDN](https://developer.mozilla.org/en-US/) \| [w3cplus](http://www.w3cplus.com/) \| [css tricks](http://css-tricks.com/) \| [汤姆大叔的博客](http://www.cnblogs.com/TomXu/) \| [慕课网](http://www.imooc.com) \| [前端乱炖](http://www.html-js.com/)
 
 
 
