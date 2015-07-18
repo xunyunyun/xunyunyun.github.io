@@ -20,13 +20,28 @@
 
     {% include footer.html %}
 
-  <script charset="utf-8" type="text/javascript" src="http://changyan.sohu.com/upload/changyan.js" ></script>
+  <!-- 畅言评论系统 -->
+ <!--  <script charset="utf-8" type="text/javascript" src="http://changyan.sohu.com/upload/changyan.js" ></script>
   <script type="text/javascript">
       window.changyan.api.config({
           appid: 'cyrRkQsSM',
           conf: 'prod_4e4b0feba5fe9dc1ab32e169e6f4028f'
       });
-  </script> 
+  </script>  -->
+
+  <!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+  <script type="text/javascript">
+  var duoshuoQuery = {short_name:"xunyunyun"};
+    (function() {
+      var ds = document.createElement('script');
+      ds.type = 'text/javascript';ds.async = true;
+      ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+      ds.charset = 'UTF-8';
+      (document.getElementsByTagName('head')[0] 
+       || document.getElementsByTagName('body')[0]).appendChild(ds);
+    })();
+    </script>
+  <!-- 多说公共JS代码 end -->
 
   </body>
 
