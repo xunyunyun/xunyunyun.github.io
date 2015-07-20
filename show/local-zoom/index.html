@@ -77,21 +77,6 @@
     	canvas.style.display = "inline-block";
 	}
 
-	img.addEventListener('mousemove',function(e){
-		if(overLay_mouseover||img_mouseover === true){
-			handler(e);
-		}else{
-			handler2();
-		}
-	},false);
-
-	overlay.addEventListener('mouseover',function(){
-			overLay_mouseover = true;
-	},false);
-	img.addEventListener('mouseover',function(){
-			img_mouseover = true;
-	},false);
-
 	var handler2 = function(){
 		canvas.style.display = "none";
 		overlay.style.display = "none";
@@ -100,11 +85,26 @@
 		},false);
 	}
 
+	overlay.addEventListener('mouseover',function(){
+			overLay_mouseover = true;
+	},false);
+	img.addEventListener('mouseover',function(){
+			img_mouseover = true;
+	},false);
+
 	img.addEventListener('mouseout',function(){
 		img_mouseover = false;
 	},false);
 	overlay.addEventListener('mouseout',function(){
 		overlay_mouseover = false;
+	},false);
+
+	img.addEventListener('mousemove',function(e){
+		if(overLay_mouseover === true||img_mouseover === true){
+			handler(e);
+		}else{
+			handler2();
+		}
 	},false);
 
 
