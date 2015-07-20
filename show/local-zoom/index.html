@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>	
+	<style>
+		* {
+			margin: 0;
+			padding: 0;
+		}
+		canvas {
+			display: none;
+			border: 2px solid #EEE;
+			zoom:1;
+		}
+		img {
+			width: 800px;
+			height: 450px;
+			margin: 50px 0 0 50px;
+		}
+		#overlay {
+			display: none;
+			position: absolute;
+			background-color: rgba(0,0,256,0.3);
+			width: 100px;
+			height: 100px;
+			display: block;
+			border: 1px solid #00F;
+			zoom:1;
+		}
+	</style>
+</head>
+<body>
+<img id='img1' src="baby.jpg" alt="小清新">
+<canvas id="drawing" width="400" height="400">不支持canvas</canvas>
+<div id="overlay"></div>
+	<script>
+	var img = document.getElementById("img1");
+	var canvas = document.getElementById("drawing");
+	var overlay = document.getElementById("overlay");
+	var context = canvas.getContext('2d');  
+	var width = 100;
+	var height = 100;
+	var mouseX;
+	var	mouseY;
+   
+
+	//图片相对于屏幕的坐标位置
+	var offsetX = img.offsetLeft;
+	var offsetY = img.offsetTop;
+
+	
+	img.onmouseover = function(){
+
+		img.onmousemove = function(e){
+			var e = e || window.event;
+        	mouseX = e.pageX;
+       		mouseY = e.pageY;
+
+       		//碰撞检测
+       		if(mouseX-offsetX+width>800){
+       			mouseX = 800 - width + offsetX;			
+       		}
+       		if(mouseY-offsetY+height>450){
+       			mouseY = 450 - height + offsetY;
+       		}
+       		
+       		// overlay.style.display = 'block';
+       		// overlay.style.left = mouseX+'px';
+        	// overlay.style.top = mouseY+'px';
+        	overlay.style.cssText = "display:block;left:"+mouseX+'px'+";top:"+mouseY+'px';
+
+        	context.clearRect(0,0,canvas.width,canvas.height);
+        	/*
+			*mouseX-offsetX,mouseY-offsetY代表鼠标在图像上的位置
+			*取宽高分别为width=100px，height=100px大小的图像区域
+			*放大后的效果图位置，位于canvas画布的位置
+			*放大后的宽高分别为canvas.width，canvas.height;
+			*/
+        	context.drawImage(img, mouseX-offsetX, mouseY-offsetY, width, height, 0, 0, canvas.width, canvas.height);
+        	canvas.style.display = "inline-block";
+
+        	
+
+
+        	
+		}	
+	}
+
+	img.onmouseout = function(){
+		canvas.style.display = "none";
+		overlay.style.display = "none";
+	}
+
+	
+
+
+
+
+
+
+	</script>
+</body>
+</html>
