@@ -25,7 +25,7 @@
 			width: 100px;
 			height: 100px;
 			display: block;
-			border: 1px solid #00F;
+			//border: 1px solid #00F;
 			zoom:1;
 		}
 	</style>
@@ -43,59 +43,69 @@
 	var height = 100;
 	var mouseX;
 	var	mouseY;
+	var overLay_mouseover = false;
+	var img_mouseover = false;
    
 
 	//图片相对于屏幕的坐标位置
 	var offsetX = img.offsetLeft;
 	var offsetY = img.offsetTop;
 
-	
-	img.onmouseover = function(){
+	var handler = function (e){
+		var e = e || window.event;
+    	mouseX = e.pageX;
+   		mouseY = e.pageY;
 
-		img.onmousemove = function(e){
-			var e = e || window.event;
-        	mouseX = e.pageX;
-       		mouseY = e.pageY;
+   		//碰撞检测
+   		if(mouseX-offsetX+width>800){
+   			mouseX = 800 - width + offsetX;			
+   		}
+   		if(mouseY-offsetY+height>450){
+   			mouseY = 450 - height + offsetY;
+   		}
+   		
+    	overlay.style.cssText = "display:block;left:"+mouseX+'px'+";top:"+mouseY+'px';
 
-       		//碰撞检测
-       		if(mouseX-offsetX+width>800){
-       			mouseX = 800 - width + offsetX;			
-       		}
-       		if(mouseY-offsetY+height>450){
-       			mouseY = 450 - height + offsetY;
-       		}
-       		
-       		// overlay.style.display = 'block';
-       		// overlay.style.left = mouseX+'px';
-        	// overlay.style.top = mouseY+'px';
-        	overlay.style.cssText = "display:block;left:"+mouseX+'px'+";top:"+mouseY+'px';
-
-        	context.clearRect(0,0,canvas.width,canvas.height);
-        	/*
-			*mouseX-offsetX,mouseY-offsetY代表鼠标在图像上的位置
-			*取宽高分别为width=100px，height=100px大小的图像区域
-			*放大后的效果图位置，位于canvas画布的位置
-			*放大后的宽高分别为canvas.width，canvas.height;
-			*/
-        	context.drawImage(img, mouseX-offsetX, mouseY-offsetY, width, height, 0, 0, canvas.width, canvas.height);
-        	canvas.style.display = "inline-block";
-
-        	
-
-
-        	
-		}	
+    	context.clearRect(0,0,canvas.width,canvas.height);
+    	/*
+		*mouseX-offsetX,mouseY-offsetY代表鼠标在图像上的位置
+		*取宽高分别为width=100px，height=100px大小的图像区域
+		*放大后的效果图位置，位于canvas画布的位置
+		*放大后的宽高分别为canvas.width，canvas.height;
+		*/
+    	context.drawImage(img, mouseX-offsetX, mouseY-offsetY, width, height, 0, 0, canvas.width, canvas.height);
+    	canvas.style.display = "inline-block";
 	}
 
-	img.onmouseout = function(){
+	img.addEventListener('mousemove',function(e){
+		if(overLay_mouseover||img_mouseover === true){
+			handler(e);
+		}else{
+			handler2();
+		}
+	},false);
+
+	overlay.addEventListener('mouseover',function(){
+			overLay_mouseover = true;
+	},false);
+	img.addEventListener('mouseover',function(){
+			img_mouseover = true;
+	},false);
+
+	var handler2 = function(){
 		canvas.style.display = "none";
 		overlay.style.display = "none";
+		img.removeEventListener('mousemove',function(e){
+			handler(e);
+		},false);
 	}
 
-	
-
-
-
+	img.addEventListener('mouseout',function(){
+		img_mouseover = false;
+	},false);
+	overlay.addEventListener('mouseout',function(){
+		overlay_mouseover = false;
+	},false);
 
 
 
