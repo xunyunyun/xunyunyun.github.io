@@ -80,9 +80,7 @@
 	var handler2 = function(){
 		canvas.style.display = "none";
 		overlay.style.display = "none";
-		img.removeEventListener('mousemove',function(e){
-			handler(e);
-		},false);
+		console.log("handler2");
 	}
 
 	overlay.addEventListener('mouseover',function(){
@@ -96,14 +94,14 @@
 		img_mouseover = false;
 	},false);
 	overlay.addEventListener('mouseout',function(){
-		overlay_mouseover = false;
+		overLay_mouseover = false;
 	},false);
 
-	img.addEventListener('mousemove',function(e){
-		if(overLay_mouseover === true||img_mouseover === true){
-			handler(e);
-		}else{
+	window.addEventListener('mousemove',function(e){
+		if((overLay_mouseover === false) && (img_mouseover === false)){		
 			handler2();
+		}else{		
+			handler(e);
 		}
 	},false);
 
