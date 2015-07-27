@@ -2,7 +2,7 @@
 layout: post
 category: "javascript"
 title:  "javascript异步编程的方法总结"
-tags: ["javascript,异步"]
+tags: ["javascript","异步"]
 ---
 
 ####**javscript是单线程的**

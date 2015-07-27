@@ -2,7 +2,7 @@
 layout: post
 category: "ajax"
 title:  "ajax全接触[慕课网]"
-tags: ["ajax,json"]
+tags: ["ajax","json"]
 ---
 
 ####ajax原理

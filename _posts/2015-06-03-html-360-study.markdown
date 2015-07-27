@@ -1,0 +1,218 @@
+---
+layout: post
+category: "html"
+title: "HTML学习（文博老师）"
+tags: ["HTML","HTML5"]
+---
+
+###HTML基础篇
+
+####DOCTYPE的作用
+
+DocumentType，文档类型声明
+
+指定HTML页面使用的标准和版本
+
+浏览器根据doctype决定使用哪种渲染模式
+
+####渲染模式
+
+Quirks Mode怪异模式
+
+Almost standerd mode准标准模式transitional
+
+standerd mode标准模式
+
+####HTML4 & XHTML
+
+XHTML为严格模式
+
+####HTML5设计思想
+
+兼容已有内容（各种格式）
+
+避免不必要的复杂性
+
+解决现实的问题（api：地理位置，本地存储）
+
+优雅降级（input标签的type）
+
+尊重事实标准（header footer）
+
+用户》开发者》浏览器厂商》标准制定者》理论完美
+
+####HTML5语义化
+
+开发者应该遵循语义来写:
+
+1.新的结构元素
+
+```section```元素表示页面中的一个内容区块，比如章节、页眉、页脚或页面中的其他部分。可以与好
+h1-h6等元素结合起来使用，标示文档结构
+
+```article```元素表示页面中的一块与上下文不相关的独立内容，比如博客中的一篇文章或报纸中的一篇文章
+
+```aside```元素表示article元素的内容之外的，与article元素相关的辅助信息
+
+```header```
+
+```footer```
+
+```hgroup```
+
+```nav```元素表示页面中导航链接的部分
+
+```figure```元素表示一段独立的流内容，一般表示文档主体流内容中的一个独立单元。使用figcaption元素为figure元素组添加标题。
+
+    <figure>
+    <figcaption>PRC</figcaption>
+    <p>hndf ad asd  asdf fg e rge egg gerert...</p>
+    </figure>
+
+在HTML4中为：
+
+    <dl>
+    <h1>PRC</h1>
+    <p>hndf ad asd  asdf fg e rge egg gerert...</p>
+    </dl>
+
+2.新的其他元素
+
+```video```元素定义视频，比如电影片段或其他视频流
+
+```audio```元素定义音频，比如音乐或其他音频流。
+
+```embed```元素用来插入各种多媒体，格式可以是Midi、Wav、AIFF、AU、MP3等。
+
+```mark```元素主要用来在视觉上向用户呈现那些需要突出显示或高亮显示的文字。mark元素的一个比较典型的应用就是在搜索结果中向用户高亮显示搜索关键字。
+
+    <mark></mark>
+
+    类似于HTML4中的<span></span>
+
+```progress```元素表示运行中的进程，可以使用progress元素来显示js中耗费时间的函数的进程。
+
+```time```元素表示日期或时间，也可以同时表示两者
+
+```ruby```元素表示ruby注释
+
+```canvas```元素表示图形。
+
+```commmand```元素表示命令按钮，比如单选按钮、复选框或按钮
+
+```details```元素表示用户要求得到并且可以得到的细节信息。可以与summary元素配合使用。
+
+```summary```元素提供标题或图例。标题是可见的，胡勇点击标题时，会显示出细节信息。summary元素应该是details元素的子元素。
+
+```datalist```元素表示可选数据的列表，与input元素配合使用，可以制作出输入值的下拉列表。
+
+```datagrid```元素表示可选数据的列表，它以属性列表的形式来显示。
+
+```keygen```元素表示生成密钥
+
+```output```表示不同类型的输出
+
+```source```为媒介元素，定义媒介资源
+
+```menu```表示菜单列表。当希望列出表单控件时使用该标签。
+
+####元数据标签
+
+```base```：指定基准URL及连接打开方式
+
+```title```: 页面标题
+
+```link```：引入外部资源
+
+```meta```:页面元数据
+
+```noscript```：浏览器不支持脚本时才展示的内容
+
+```script```：引入脚本
+
+```style```：嵌入页面样式表
+
+####meta
+
+    <meta name = 'viewport' content = "width=device-width;initial-scale=1;user-scale=no">
+
+应用于移动设备
+
+    <meta http-equive = 'refresh' content='5,url=http://example.com'>
+
+5秒后刷新url页面
+
+    <meta name='format-detection' content='telephone=no,email=no'>
+
+可用于移动端，电话选定，邮箱选定
+
+    <meta name='renderer' content='webkit'>
+
+####使用图片
+
+Img alt很重要
+
+    <figure>
+        <img src='' alt=''></img>
+        <caption>图片标题</caption>
+    </figure>
+
+####常用的图片格式
+
+1.jpg
+---照片
+
+2.png
+
+---色彩较少时使用
+---png24可以半透明
+---无损压缩
+
+3.gif
+
+---无法半透明
+---可以多帧做动画
+---大多数情况下用png代替，较大。
+
+**注意**
+
+如果是装饰性的图片，建议用CSS背景图片的形式
+
+避免使用<br>；邮箱的建议加一个链接，可以直接发邮件
+
+####Html5中input的新类型：
+
+Time
+
+Date
+
+Datetime
+
+Datetime-local
+
+Month
+
+Week
+
+Email（主要时在手机上有区别）
+
+Tel（主要时在手机上有区别）
+
+Search（主要时在手机上有区别）
+
+Number（用鼠标滚轴去调整）
+
+URL（在移动端有区别，点击后http：//baidu.com）
+
+Range
+
+Color
+
+Pattern（自己去定义一个正则表达式去判断）
+
+Required 必填字段
+
+
+
+
+

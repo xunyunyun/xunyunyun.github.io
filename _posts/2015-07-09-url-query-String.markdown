@@ -2,7 +2,7 @@
 layout: post
 category: "http"
 title:  "URL中查询语句解析"
-tags: ["url,http"]
+tags: ["url","http"]
 ---
 
 ####查询语句解析的javascript实现

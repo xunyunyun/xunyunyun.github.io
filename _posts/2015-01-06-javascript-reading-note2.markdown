@@ -2,7 +2,7 @@
 layout: post
 category: "javascript"
 title:  "javascript高级程序设计笔记-6章"
-tags: ["javascript,redbook"]
+tags: ["javascript","面向对象"]
 ---
 
 ###面向对象的程序设计

@@ -1,0 +1,390 @@
+---
+layout: post
+category: "CSS"
+title: "CSS学习（文博老师）"
+tags: ["CSS","CSS3"]
+---
+
+####三种字体：
+
+衬线体：字体的末端有装饰。Georgia、宋体
+
+无衬线体：Arial、Helvetica、黑体、微软雅黑
+
+等宽字体：主要对于英文，所有的字母一样宽：Consoles、Courier、宋体
+
+**注意**
+
+1.几种字体，最后一个一般为sans-serif
+
+2.一般把英文字体放前面，中文放后面（**中英文不同显示，若中文放前面，中文默认中英文均按其格式显示**）
+
+####font-size
+
+单位有：px、百分比、em
+
+初始值为medium（由浏览器设置决定，一般16px），可继承
+
+长度单位em：一般是相对于font-size的计算值的(line-height)
+
+用在font-size属性上时，是相对于父元素的fon-size计算值。
+
+line-height：段落文字一般取值：1.4-1.8
+
+百分比：为自身font-size的倍数。
+
+最好为一个数字（倍数），不加em时，计算值的时候不会先转化成一个具体的值。em的话，会先计算出一个具体的值，再继承。
+
+####font-style
+
+font-weight：normal,bold等
+
+100-900，因为浏览器不支持这么多规格的字体。所以浏览器一般不会正常显示。
+
+####RGB & RGBA
+
+**opacity会改变这个元素的透明度，不仅改变背景色，也会改变上面的文字。这个时候通过RGBA中的A实现。**
+
+####HSL & HSLA
+
+Hue:色相，基本的颜色
+
+Saturation:饱和度，饱和度越高，颜色越亮，否则，变灰
+
+Lightness:亮度，亮度提高变成白色，亮度降低变成黑色
+
+####text-align
+
+定义文本在容器内的对齐方式
+
+初始值由HTML的dir决定，可继承。
+
+取值为：left、right、center、Justify(只对多行生效，且对最后一行是不生效的)。
+
+####盒模型
+
+Width:指定content box的宽度
+
+百分比相对于父容器（包含块）的content box高度；
+
+只有当包含块的高度不依赖其父容器的高度时，其百分比生效。
+
+只有当包含块的高度，其父容器的高度确定时，其百分比生效（有一种例外，就是CSS拉伸时）
+
+####box-sizing
+
+    * {box-sizing : border-box;}
+
+```box-sizing: content-box;```（默认值）：宽度和高度分别应用到元素的内容框。在宽度和高度之外绘制元素的内边距和边框。
+
+```box-sizing : border-box;```（常用值）：为元素设定的宽度和高度决定了元素的边框盒。
+就是说，为元素指定的任何内边距和边框都将在已设定的宽度和高度内进行绘制。
+通过从已设定的宽度和高度分别减去边框和内边距才能得到内容的宽度和高度。
+
+```box-sizing : inherit;```规定应从父元素继承 box-sizing 属性的值。
+
+####padding
+
+不可为负值
+
+####margin
+
+外边距折叠：
+    1.两个div都是float：left；的两个水平div的左边的margin-right和右边的margin-left是否会合并？
+    答案：不会合并! 因为float:left;的div为一个BFC，不与他相邻的元素的margin发生合并。
+    2.两个div都是float：left；的垂直div的上面的margin-bottom和下面的margin-top是否会合并？（两个div宽度大于屏幕宽度时）
+    答案：不会合并! 因为float:left;的div为一个BFC，不与他相邻的元素的margin发生合并。
+    3.没有float的情况下的两个div在垂直方向上会怎样？
+    答案：会合并！
+    4.没有float的情况下的两个div在水平方向上又会怎样？（让div的display: inline-block;）
+    答案：不会合并！因为display: inline-block;的div为一个BFC，不与他相邻的元素的margin发生合并。
+
+总结一下：
+
+毗邻的两个或多个margin会合并成一个margin，叫做外边距折叠。规则如下：
+    1. 两个或多个毗邻的普通流中的块元素垂直方向上的margin会折叠
+    2. 浮动元素/inline-block元素/绝对定位元素的margin不会和垂直方向上的其他元素的margin折叠
+    3. 创建了块级格式化上下文的元素，不会和它的子元素发生margin折叠
+    4. 元素自身的margin-bottom和margin-top相邻时也会折叠 
+
+####border
+
+得到一些特殊图形（三角形，梯形等）
+
+**注意**
+
+设置边框什么的不影响百分比，用```box-sizing:border-box```
+
+####视口（viewport）
+
+浏览器的可视区域的宽度和高度
+
+####块级元素
+
+会被格式化成块状的元素
+
+Eg: p、div、section
+
+display : block 、list-item、 table使元素变成块状
+
+####行级元素
+
+让元素内容分布
+
+Eg: a、img、span
+
+Display : inline 、inline-block 、 inline-table使元素变成行级
+
+####display属性
+
+block、inline、inline-block、none
+
+inline-block元素本身是行级，为其内容生成块级框。
+
+####CSS选择器的内容
+
+伪类，伪元素
+
+    ::before
+    ::after {
+        content:"";
+        display:block;
+    }
+
+####定位流
+
+绝对定位、相对定位、浮动定位
+
+####排版流（文档流）
+
+除了根元素、浮动元素和绝对定位元素外，其他元素都在排盘流之内
+
+而根元素、浮动元素和绝对定位的元素会脱离文档流
+
+在排版流中块级元素独占一行；行级元素可以水平并排摆放。
+
+####浮动（float）
+
+浮动可以实现将多个块级框并排显示
+
+浮动元素从排版流中脱离，被漂浮在容器左边或右边
+
+浮动元素不会影响其后面的块级框
+
+但是浮动元素会对后面的行级元素产生影响，会避开浮动元素。
+
+####clear
+
+指定元素哪一边不能与之前的浮动框相邻
+
+clear：left|right|both
+
+####清除浮动方法
+
+BFC清除浮动
+
+clear清除浮动
+
+####BFC（块级格式化上下文）
+
+在BFC中，框会从包含块的顶部开始，从上到下摆放
+
+BFC内的浮动不会影响到BFC外面的元素
+
+BFC的高度会包含其内的浮动元素
+
+BFC不会和浮动元素重叠
+
+**BFC的创建**
+
+浮动框float
+
+绝对定位框absolute
+
+非块级的块容器（inline-block）
+
+Overflow属性非visible的块框
+
+**BFC的作用**
+
+清除浮动
+
+防止margin折叠
+
+双栏布局
+
+####position 定位
+
+static：默认值。没有定位，元素出现在正常的流中（忽略 top, bottom, left, right 或者 z-index 声明）。
+
+relative：相对定位（相对自己）
+
+absolute: 基于父级为非static时的定位。在不指定left、right、top、bottom时，位置不变，但脱离文档流。
+
+fixed：生成绝对定位的元素，相对于浏览器窗口进行定位。不会随页面滚动发生位置变换
+
+其自动计算：
+
+Top/left/right/bottom/width/height
+
+当同时设置了left、right、width冲突时，以width为准，先舍弃right
+
+####z-index
+
+必须为整数
+
+**注意**：只有相同级别（在同一个元素的直接子元素）才可以比较。
+
+z-index指定元素在所属堆叠上下文中的层次
+
+堆叠上下文的形成z-index值为非auto的定位元素。
+
+**绘制顺序**
+
+每个堆叠上下文中，从上到下的顺序显示：
+
+1.Background，boder
+
+2.z-index为负值的定位元素
+
+3.正常块级元素
+
+4.浮动
+
+5.行级元素
+
+6.z-index为0
+
+7.z-index为正值
+
+
+####表格的结构
+
+    <table>
+    <thead>
+    <tbody>
+    <tr>
+    <td>
+
+**边框合并**
+```border-collapse:collapse;```
+
+表格宽度问题
+table-layout: fixed;
+
+不推荐用table来做布局。
+
+    ul {
+        display:table;
+        width:100%;
+    }
+    li {
+        display:table-cell;
+    }
+
+移动端宽度不固定，用这个方法比较好用。
+
+CSS中注释为/**/，但是单个属性前加// 也可以用于调试，这样的话，不识别可用。
+
+###CSS3学习
+
+####高级选择器
+
+E~F 一般兄弟选择器，选中的是F，有一个并列的兄弟是E，选择所有同级的。
+
+E+F 相邻兄弟选择器，只选择相邻的。
+
+:checked与兄弟选择器结合
+
+input:checked ~ nav 当input被选中时，显示nav导航列表
+
+####结构伪类
+
+:first-child
+
+:last-child
+
+:nth-child()
+
+:not()否定伪类
+
+####圆角
+
+Border-radius:5px
+
+可以指定四个方向
+
+可用百分比
+
+####阴影
+
+Box-shadow:
+
+参数分别为：
+
+水平偏移量：正（右）负（左）
+
+垂直偏移量：正（下）负（上）
+
+模糊度：
+
+模糊距离
+
+颜色
+
+Inset
+
+**注意**
+
+用逗号隔开，加多重阴影。
+
+内部阴影inset
+
+用剥削shadow来模拟多层窗的图形
+
+**Photoshop 最新版中有一个功能叫做复制CSS;对于图层，选中，右键，可复制CSS**
+
+####背景
+
+Background
+**Background-size:**
+Cover：可裁切，但是要盖住这个页面（使用最多的） 
+
+Contain: 没有裁切
+
+####[背景缩放](http://webzhao.github.io/sharing/slides.html?file=front-end-essentials-4#/20)
+
+background-size：cover（图像宽度平铺屏幕，高度比例缩放）、
+
+contain（原比例显示）、
+
+100% auto（图像宽度平铺屏幕，高度比例缩放）、
+
+auto 100% 、100% 100%、100px 100px；
+
+background-image：landscape、portrait
+
+background-position：center、left top、left bottom、right top、right bottom；
+
+####动画
+
+1.transform变换
+
+平移、旋转、缩放、扭曲:translate、rotate、scale、skew
+
+2.transition过渡
+
+从一个状态到另一个状态的过程:```transition: all 2s ease-in;```
+
+3.animation
+
+动画单独定义
+
+@keyframe indicate {}
+
+
+
+
+
+
+

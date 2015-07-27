@@ -2,7 +2,7 @@
 layout: post
 category: "javascript"
 title:  "javascript高级程序设计笔记-4到5章"
-tags: ["javascript,redbook"]
+tags: ["javascript","数据类型"]
 ---
 
 #####Javascript函数没有重载！！！因为可以不指定函数个数，后面的同名函数定义会覆盖。
