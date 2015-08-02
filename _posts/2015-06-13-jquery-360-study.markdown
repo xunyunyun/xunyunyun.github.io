@@ -63,6 +63,7 @@ Id最高，:hidden最差
 
 
 ####排版引擎渲染流程
+
  ![house-icon]({{"/img/rendering-engine.jpg" | prepend:site.baseurl}})
 
 DOMtree与style rules如何attachment呢？
@@ -92,12 +93,16 @@ DOMtree与style rules如何attachment呢？
 ####js事件绑定：
 
 W3c下：
+
 	addEventListener(event type, event handler, useCapture)
 	useCapture=false; 表示事件冒泡
+
 IE下：
+
 	attachEvent(event type, event handler)
 
 jquery的事件绑定:
+
 	.event 包括click,change,focus,blur等等  $("body").click(function(){})
 	.one   $("body").one("click",function(){});
 	.bind/unbind   $("body").bind("click",function(){});
@@ -107,12 +112,14 @@ jquery的事件绑定:
 	.on/off  $("ul").on("click" ,"li" , function(){})
 
 ####事件优化：
+
 	Event Delegation
 	避免使用live
 	直接使用on/off
 
 来触发某元素的事件click
-$("#id").trigger(" click ")
+
+    $("#id").trigger(" click ")
 
 
 ####**Jquery动画**
@@ -122,17 +129,20 @@ $("#id").trigger(" click ")
 	toggle() 
 
 渐变：
+
 	.fadeIn()
 	.fadeOut()
 	.fadeTo()
 	.fadeToggle()
 
 滑动
+
 	.slidedown()
 	.slideup()
 	.slidetoggle()
 
 动画
+
 	$("#box").animate({
 		Width:"400px",
 		Height:"300px",
@@ -197,6 +207,7 @@ $.ajax({
 {% endhighlight %}
 
 ####Fetch API 
+
 Fetch API 存在很大的兼容性问题
 
 {% highlight javascript %}
