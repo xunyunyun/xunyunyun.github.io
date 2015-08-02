@@ -86,7 +86,9 @@ request.onreadystatechange = function(){
 {% endhighlight %}
 
 ####服务器端实现
+
 1.对于get型：
+
 {% highlight php %}
 	Header("Content-Type:text/plain;charset=utf-8");
 	if ($_SERVER["REQUEST_METHOD"] == "GET") {
@@ -108,7 +110,9 @@ function search(){
 
 }
 {% endhighlight %}
+
 2.对于post型
+
 {% highlight php %}
 function create(){
 	//判断信息是否填写完全
@@ -177,6 +181,7 @@ http://www.abc.com:8080/scripts/jquery.js
 ```scripts/jquery.js```：请求资源地址
 
 当协议，子域名，主域名，端口号中有人一个不同时，则为不同域；不同域之间相互请求资源为跨域。
+
 出于安全起见，不允许跨域调用其他页面的对象。
 
 #####**处理跨域的三种方式**
