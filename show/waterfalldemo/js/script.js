@@ -68,6 +68,7 @@ function getByClass(parent,clsName){
  function checkScrollSlide(){
  	var oParent=document.getElementById("main");
  	var oBoxs=getByClass(oParent,'box');
+ 	//当最后一个元素显示一半时
  	var lastBoxH=oBoxs[oBoxs.length-1].offsetTop+Math.floor(oBoxs[oBoxs.length-1].offsetHeight/2);
  	//document.body.scrollTop为混杂模式下获取body的滚动位置；document.documentElement.scrollTop为标准模式下获取滚动位置。
  	var scrollTop=document.body.scrollTop||document.documentElement.scrollTop;
