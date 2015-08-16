@@ -74,7 +74,7 @@ tags: ["mobile"]
 通过这句话设置：
 
 {% highlight html %}
-<meta name = “view” content=”width=device-width,initial-scale=1”>
+<meta name = "view" content="width=device-width,initial-scale=1">
 {% endhighlight %}
 
 	width：布局视口宽度
@@ -94,8 +94,8 @@ tags: ["mobile"]
 或者：
 
 {% highlight html %}
- <style type = “text/css”>
-@media screen and (min-width:480){
+ <style type = "text/css">
+@media screen and (min-width:480px){
 	.selector {}
 }
 </style>
@@ -292,6 +292,8 @@ CSS：
 }
 {% endhighlight %}
 **Flexbox学习最新的，可以用工具解决兼容性问题**：[flexbox转化](http://pleeease.io/play/)
+
+[flexbox布局相关文章](http://www.w3cplus.com/css3/a-guide-to-flexbox.html)
 
 #####图片
 
