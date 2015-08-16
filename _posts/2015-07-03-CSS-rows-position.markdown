@@ -148,7 +148,9 @@ CSS格式如下：
 .right { float: left; width: 270px; margin-left: -270px; position:relative; left:270px;}
 ```
 
-如果增加一个div包裹的话，html如下时：{% highlight html %}
+如果增加一个div包裹的话，html如下时：
+
+{% highlight html %}
 <body>
 	<div id="parent">		
 		<div class="main">
