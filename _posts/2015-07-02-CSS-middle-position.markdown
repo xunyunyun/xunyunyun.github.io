@@ -98,7 +98,7 @@ position: relative; left: -50%;
 参考于[盘点8种CSS实现垂直居中水平居中的绝对定位居中技术](http://blog.csdn.net/freshlover/article/details/11579669)|
 [6 Methods For Vertical Centering With CSS](http://www.vanseodesign.com/css/vertical-centering/)
 
-#####**2.不定宽高（负外边距居中）**
+#####**2.定宽高（负外边距居中）**
 
 ```
 div { width: 300px; height: 200px; margin: -100px 0 0 -150px; position: absolute;
@@ -111,3 +111,8 @@ left:50%; top:50%;}
     其缺点：
     1.不能自适应，不支持百分比和min-/max-属性设置
     2.内容可能溢出
+
+
+推荐网页：
+
+[垂直水平居中实现](http://f2e.souche.com/blog/jie-du-cssbu-ju-zhi-shui-ping-chui-zhi-ju-zhong/)
