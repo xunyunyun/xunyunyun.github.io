@@ -1,56 +1,58 @@
 ---
 layout: post
 category: "blog"
-title:  "[置顶]关于博客的说明！！！"
+title:  "vim操作学习"
 tags: ["blog"]
 ---
 
-####关于博客系统
+####Vim cheat sheet常用快捷键
 
-#####本博客由于新搭建，现在仍处于测试阶段，发布日期为7月1号。博客中可能有一些未发现的错误，也希望大家能够通过评论系统，来指正博客文章中的错误。本博客搭建的时候考虑了PC端和移动端的兼容性问题。也可以在移动端查看哦！
+1. shift+T tab方式打开文件
 
+2. ctrl+p 查找文件
 
-####关于博客模板
+3. 文件增删改
 
-#####本博客采用了jekyll和github Pages技术在github网站上搭建blog，并没有采用jekyll自带的模板，而是通过学习[jekyll文档(http://jekyllrb.com/)](http://jekyllrb.com/)，自己设计的博客模板。如有需要，可以到我的[github(https://github.com/xunyunyun)](https://github.com/xunyunyun)自行下载，如果采用，记得标明来自于[xunyunyun.github.io](http://xunyunyun.github.io)
+o -> 
+    
+     a  创建一个文件
 
+     m  修改一个文件
 
-####关于博客文章
+     d  删除一个文件
 
-#####**所有2015年之前的博客文章，均来自于[Panxw's Blog(http://www.panxw.com/)](http://www.panxw.com/)。特此声明！！！**之所以引用他人博客文章是为了展示模板效果，时间轴效果和分类效果。
+     c  复制一个文件
 
-#####通过学习[markdown语法说明](http://wowubuntu.com/markdown/index.html)|[Markdown，你只需要掌握这几个](https://www.zybuluo.com/AntLog/note/63228#171-%E8%AF%B4%E6%98%8E)，自己写了关于几篇CSS相关的博客。
+     f  filter file's  extention
 
+|快捷键|功能|
+|:---|:---|
+|ESC|退出insert模式，进入Normal模式|
+|dd |删除当前行|
+|\dc|自动为函数添加注释|
+|y|在ctrl+v或者shift+v选中内容后，复制到剪贴板|
+|yy|复制光标所在整行|
+|u|输入u来撤销最后执行的命令|
+|ctrl+r|恢复命令，也就是撤销掉撤销命令|
+|p|粘贴剪切板|
+|0|跳转到行首|
+|$|跳转到行尾|
+|gg=G|对整个文本进行格式化|
+|=|用shift+v选中多行后，按=号，可以格式化所选行|
+|\be|查看最近编辑过的文件列表|
+|ctrl+6|查看上一次编辑过的文件|
+|zm|全部关闭folder|
+|zn|全部展开folder|
+|zc|展开一级folder|
+|v|进入可视模式，选中代码块，上下左右移动，可选中更多。|
+|ctrl+v|进入可视模块，选中摸个区块内的字符|
+|alt + 鼠标移动|进入自由选择模式，可实现跨tab拷贝粘贴|
+|shift + insert|插入|
+|ctrl + insert|复制|
+|ctrl+w，然后 |最大化当前分栏|
+|:sp|快速横向分屏|
+|ctrl+wv|快速竖向分屏|
+|:set paste|进入粘贴模式，不会自动缩进，退出的话:set nopaste|
+|:set wrap|自动换行，退出的话:set nowrap|
+|:set foldmethod=indent|html代码折叠|
 
-####关于评论系统
-
-#####本博客的评论系统来自于[搜狐畅言(http://changyan.kuaizhan.com/)](http://changyan.kuaizhan.com/)，其他评论系统还有[多说(http://duoshuo.com/)](http://duoshuo.com/)、[友言(http://www.uyan.cc/)](http://www.uyan.cc/)。
-
-
-####关于demo
-
-#####本博客中的demo展示，来自于之前的整理，有些demo是在学习前端初期完成，可能没有考虑一些移动端的兼容性问题。
-
-
-####后续
-
-#####接下来将会整理一下之前jekyll博客搭建中遇到问题、Javascript的学习笔记和总结、CSS常见问题总结、前端面试经历、和大家分享！
-
-
-
-
-
----
-
-
-1.修改评论系统，改为多说[(http://duoshuo.com/)](http://duoshuo.com/)
-
-2.博客不断更新中
-
-
-####持续更新中！
-
----
-<p class="sentence">
-努力让自己的才华配得上自己的梦想
-</p>
