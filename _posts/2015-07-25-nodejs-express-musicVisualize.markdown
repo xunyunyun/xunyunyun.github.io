@@ -5,7 +5,7 @@ title:  "音乐可视化"
 tags: ["nodejs", "express","visualize","canvas"]
 ---
 
-####知识点概括
+#### 知识点概括
 
 1.服务器端：Node+Express+ejs
 
@@ -17,7 +17,7 @@ tags: ["nodejs", "express","visualize","canvas"]
 
 5.尝试实现节奏大师
 
-####环境配置
+#### 环境配置
 
 安装express
 
@@ -43,7 +43,7 @@ tags: ["nodejs", "express","visualize","canvas"]
 
 默认端口为3000端口，可通过localhost:3000来访问。
 
-####webAudio
+#### webAudio
 
 1.AudioContext对象：
 
@@ -109,7 +109,7 @@ frequencyBinCount:FFT值的一半，即实时得到的音频频域的数据个�
 
 getByteFrequencyData(Uint8Array),复制音频当前的频域数据，到Unit8Array中。
 
-####canvas实现音乐可视化的程序实现过程
+#### canvas实现音乐可视化的程序实现过程
 
 1.封装函数EventUtil
 
@@ -211,9 +211,9 @@ _draw:function(arr){
 ![条状显示效果]({{"/img/musicvisualizecolumn.png" | prepend:site.baseurl}})
 
 
-####扩展编写“节奏大师”
+#### 扩展编写“节奏大师”
 
-#####设计思路：
+##### 设计思路：
 
 1.节奏大师中的节奏按钮是按照什么规律设计的？[根据知乎上的回答](http://www.zhihu.com/question/21626668)，可知节奏按键设计复杂，不能根据用户随机选择歌曲，只能选择节奏大师中已有的歌曲。
 
@@ -309,12 +309,12 @@ EventUtil.addHandler(document,"keydown",function(e){
 });
 {% endhighlight %}
 
-####错误判断
+#### 错误判断
 
 当信号下降到距离底部位置为40px时，这个阶段发生对应的按键事件认为用户音符按键正确，而这个阶段没能发生对应的按键事件为人用户丢失音符按键。当错误数为10次时，游戏结束。
 
 
-####待完善功能
+#### 待完善功能
 
 1.当用户捕获音符按键时，应有提示，一些放大或发散的动画效果。当用户丢失音符按键。也应给域动画提示。
 

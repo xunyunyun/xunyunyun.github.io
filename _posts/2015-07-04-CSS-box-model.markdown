@@ -5,7 +5,7 @@ title: "关于盒模型的属性"
 tags: ["盒模型"]
 ---
 
-####一、border
+#### 一、border
 
 ##### 实现一个三角形
 
@@ -73,7 +73,7 @@ CSS
 
 ![house-icon]({{"/img/house-icon.png" | prepend:site.baseurl}})
 
-####二、margin
+#### 二、margin
 
 ##### **外边界合并问题**
 

@@ -5,17 +5,17 @@ title:  "jquery学习(岳文老师)"
 tags: ["jquery"]
 ---
 
-####jQuery特点
+#### jQuery特点
 
 轻量级、兼容CSS3（新的选择器）、跨浏览器、简单好用
 
-###关于jquery 2.X版本
+### 关于jquery 2.X版本
 
 不支持IE6、7、8；更加轻量（减小20%）；模块化，可定义更小的版本：兼容1.X的API。
 
 
 
-####**选择器**
+#### **选择器**
 
 	document.getElementById
 	document.getElementsByName
@@ -24,7 +24,7 @@ tags: ["jquery"]
 	document.querySelectorAll
 	document.getElementsByClassName
 
-####基本筛选
+#### 基本筛选
 
 	:animated 所有动画
 	:first   $("p:first") 第一个<p>
@@ -41,12 +41,12 @@ tags: ["jquery"]
 	:has() 
 	:parent
 
-####可见筛选
+#### 可见筛选
 
 	:hidden $("p:hidden") 所有隐藏的<p>元素
 	:visible 可见的
 
-####属性筛选
+#### 属性筛选
 
 	[name |= "value"]  选取带有以指定值开头的属性值的元素，该值必须是整个单词
 	[name *= "value"]   选取属性值中包含指定值的每个元素
@@ -57,12 +57,12 @@ tags: ["jquery"]
 	[name ^= "value"]    name属性
 	[name] 有name属性的
 
-####元素筛选性能如何？
+#### 元素筛选性能如何？
 
 Id最高，:hidden最差
 
 
-####排版引擎渲染流程
+#### 排版引擎渲染流程
 
  ![house-icon]({{"/img/rendering-engine.jpg" | prepend:site.baseurl}})
 
@@ -70,7 +70,7 @@ DOMtree与style rules如何attachment呢？
 
 **选择器的解析方式**：从右向左解析
 
-####选择器优化：
+#### 选择器优化：
 
 	ID>Tag>class>querySelector
 	选择器逆向解析，从右向左;避免使用通配符
@@ -79,7 +79,7 @@ DOMtree与style rules如何attachment呢？
 	在选择class之前使用tag
 	JQuery中所有的选择器都是用正则去匹配的，较慢，所以选择器应该尽量短。
 
-####**jQuery操作**
+#### **jQuery操作**
 常用方法：
 
 	$(‘#id’).data()
@@ -90,7 +90,7 @@ DOMtree与style rules如何attachment呢？
 
 
 
-####js事件绑定：
+#### js事件绑定：
 
 W3c下：
 
@@ -111,7 +111,7 @@ jquery的事件绑定:
 	.delegate/undelegated  $("ul").delegate("li" , "click" , function(){})   事件代理
 	.on/off  $("ul").on("click" ,"li" , function(){})
 
-####事件优化：
+#### 事件优化：
 
 	Event Delegation
 	避免使用live
@@ -122,7 +122,7 @@ jquery的事件绑定:
     $("#id").trigger(" click ")
 
 
-####**Jquery动画**
+#### **Jquery动画**
 
 	hide() 相当于display：none；
 	show() 对应display：block；
@@ -157,7 +157,7 @@ jquery的事件绑定:
 	.stop()  暂停
 	.finish()  直接到最终状态
 
-####**Jquery异步**
+#### **Jquery异步**
 
 {% highlight javascript %}
 $.ajax({
@@ -206,7 +206,7 @@ $.ajax({
 })
 {% endhighlight %}
 
-####Fetch API 
+#### Fetch API 
 
 Fetch API 存在很大的兼容性问题
 
@@ -260,7 +260,7 @@ fetch("http://www.example.org/submit.php", {
 fetch()函数的参数和传给Request()构造函数的参数保持完全一致，所以你可以直接传任意复杂的request请求给fetch()。
 
 
-####$.Deferred延迟对象
+#### $.Deferred延迟对象
 
 {% highlight javascript %}
 deferred = $.Deferred()
@@ -298,7 +298,7 @@ timeout:1000
 {% endhighlight %}
 
 
-####$.Deferred.promise()
+#### $.Deferred.promise()
 
 	支持版本>1.6
 	Derferred的子集
@@ -381,7 +381,7 @@ $.when( effect() ).done( function(){   // 在effect函数执行完毕后，再�
 执行淡入淡出，之后finished！
 表示为当effect代表的函数执行完成，在执行done中的函数。
 
-####**其他框架**
+#### **其他框架**
 PC框架：Qwrap 、 YUI 、Prototype
 
 移动框架：zepto.Js   iScroll
@@ -398,7 +398,7 @@ Angularjs 应用：[360好搜音乐(移动端)](http://m.music.haosou.com/)
 
 动画：Cocos2d  three.js
 
-####**学习工具**
+#### **学习工具**
 
 奇舞周刊
 

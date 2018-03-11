@@ -5,9 +5,9 @@ title: "用javascript实现排序"
 tags: ["排序"]
 ---
 
-####各种排序算法的js实现（从小到大排序）
+#### 各种排序算法的js实现（从小到大排序）
 
-####**选择排序**
+#### **选择排序**
 {% highlight javascript %}
 //依次选择最小，次小的。。。
 //方法一
@@ -56,7 +56,7 @@ console.log(selectSort2(arr));
 
 {% endhighlight %}
 
-####**冒泡排序**
+#### **冒泡排序**
 
 {% highlight javascript %}
 //相邻两个比较，大的数逐个后移
@@ -80,7 +80,7 @@ var arr = [9,8,7,7,6,5,4,3,2,1];
 console.log(bubbleSort(arr));
 {% endhighlight %}
 
-####**快排**
+#### **快排**
 
 {% highlight javascript %} 
 //方法一
@@ -121,7 +121,7 @@ console.log(quicksort(array));
 
 {% endhighlight %}
 
-####**堆排序**
+#### **堆排序**
 
 {% highlight javascript %}
 

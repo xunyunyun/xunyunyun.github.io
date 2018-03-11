@@ -5,7 +5,7 @@ categories: "blog"
 tags: ["jekyll"]
 ---
 
-####配置jekyll环境
+#### 配置jekyll环境
 
 需要安装Ruby -> 安装RubyGems —> 安装jekyll
 
@@ -31,7 +31,7 @@ tags: ["jekyll"]
 
 来实时的查看jekyll搭建的博客的显示状况
 
-####github Pages
+#### github Pages
 
 github Pages可以被认为是用户编写的、托管在github上的静态网页。
 
@@ -48,11 +48,11 @@ github提供模板，允许站内生成网页，但也允许用户自己编写�
 
     git checkout --orphan gh-pages
 
-####jekyll
+#### jekyll
 
 jekyll是一个简单免费的Blog生成工具，类似于wordPress。它只是一个生成一个静态网页的工具，不需要数据库提供支持。可免费部署到github上。
 
-#####1.默认文件夹组成如下图：
+##### 1.默认文件夹组成如下图：
 
 ![jekyll网站目录]({{"/img/jekyll-docs.png" | prepend:site.baseurl}})
 
@@ -67,7 +67,7 @@ jekyll是一个简单免费的Blog生成工具，类似于wordPress。它只是�
 
 对于目录下的每个文件，使用YAML头信息之后，都会被转化格式，然后生成最终文件。
 
-#####2.YAML头信息
+##### 2.YAML头信息
 
 任何只要包含YAML头信息的文件在jekyll中都能被当做一个特殊的文件来处理。
 
@@ -102,7 +102,7 @@ jekyll是一个简单免费的Blog生成工具，类似于wordPress。它只是�
 
 也可改为html，css等。
 
-#####4.常用变量
+##### 4.常用变量
 
 site：来自_config.yml文件，全站范围的信息+配置
 

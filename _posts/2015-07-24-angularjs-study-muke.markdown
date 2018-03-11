@@ -5,13 +5,11 @@ title:  "AngularJs实战"
 tags: ["框架", "Angularjs"]
 ---
 
-###AngularJs实战
-
 放弃了IE8，引入了单项数据绑定，删掉了过时的API
 
 四大核心特性：MVC、模块化module、指令系统、双向数据绑定
 
-#####1.小例子介绍：
+##### 1.小例子介绍：
 
 1.MVC
 
@@ -260,7 +258,7 @@ Scope2.js
 |event.preventDefault()|没有用|
 |event.defaultPrevented|如果调用了`preventDefault`则为true|
 
-#####2.路由、模块、依赖注入源代码
+##### 2.路由、模块、依赖注入源代码
 
 路由设置app.js：
 
@@ -382,7 +380,7 @@ B:
     }
 
 
-#####3.双向数据绑定
+##### 3.双向数据绑定
 
 controllers.js:
 
@@ -537,7 +535,7 @@ index.js
         }
     ])
 
-#####4.路由
+##### 4.路由
 
 为了解决这些问题：
 
@@ -767,7 +765,7 @@ about.html:
 
 
 
-#####5.指令（最复杂）
+##### 5.指令（最复杂）
 
 第三方指令库
 
@@ -937,7 +935,7 @@ $transclude - 一个预先绑定到当前转置scope的转置linking function :f
 2.5节不是很懂！！！
 
 
-#####2.6 Service与Provider
+##### 2.6 Service与Provider
 
 （1）HTTP请求
 
@@ -1028,7 +1026,7 @@ data.json：
 
 2.7未看
 
-###AngularJS中文网
+### AngularJS中文网
 
 AngularJs使用了不同的方法，他尝试去弥补HTML本身在构建方面的缺陷。AngularJS通过使用我们成为标识符的结构，让浏览器能够识别新的语法。
 
@@ -1064,7 +1062,7 @@ AngularJs使用了不同的方法，他尝试去弥补HTML本身在构建方面�
 
 这行代码载入angular.js脚本，当浏览器将整个HTML页面载入完毕后将会执行该angular.js脚本，angular.js脚本运行后将会寻找含有ng-app指令的HTML标签，该标签即定义了AngularJS应用的作用域。
 
-###AngularJS基础（智课网）
+### AngularJS基础（智课网）
 
 AngularJS有五个主要核心特性：
 

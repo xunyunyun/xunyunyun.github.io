@@ -6,7 +6,7 @@ tags: ["URL", "正则表达式"]
 ---
 
 
-####方法一
+#### 方法一
 
 	/* 
 	 *<javascript语言精粹>中的例子：用来匹配URL的正则表达式
@@ -53,14 +53,14 @@ for (i = 0; i < names.length; i++) {
 }
 {% endhighlight %}
 
-#####实现结果：
+##### 实现结果：
 
 ![house-icon]({{"/img/urlToObject0.png" | prepend:site.baseurl}})
 
 
-####方法二
+#### 方法二
 
-#####javascript程序如下：
+##### javascript程序如下：
 
 	/**
 	 * 解析一个url并生成window.location对象中包含的域
@@ -105,7 +105,7 @@ var url = "http://bbs.byr.cn/#!default";
 console.log(parseUrl(url));
 {% endhighlight %}
 
-#####实现结果：
+##### 实现结果：
 
 ![house-icon]({{"/img/urlToObject.png" | prepend:site.baseurl}})
 

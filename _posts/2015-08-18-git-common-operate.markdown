@@ -5,7 +5,7 @@ title:  "git常用操作"
 tags: ["git"]
 ---
 
-常用操作
+#### 常用操作
 
 1、上传远端服务器过程
 
@@ -69,7 +69,7 @@ tags: ["git"]
 
 ```git reset --hard origin/master```
 
-####git规范：
+#### git规范：
 
 1.一次commit提交一件事
 

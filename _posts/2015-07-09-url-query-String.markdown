@@ -5,7 +5,7 @@ title:  "URL中查询语句解析"
 tags: ["url","http"]
 ---
 
-####查询语句解析的javascript实现
+#### 查询语句解析的javascript实现
 
 {% highlight javascript %}
 // 找出url中的查询语句

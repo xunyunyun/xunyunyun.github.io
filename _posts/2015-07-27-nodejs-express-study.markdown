@@ -5,10 +5,7 @@ title:  "nodejs+express学习"
 tags: ["nodejs", "express"]
 ---
 
-
-###NodeJs(NodeJs入门)
-
-####一个完整的基于NodeJs的web应用
+#### 一个完整的基于NodeJs的web应用
 
 a.提供web页面，需要一个HTTP服务器
 
@@ -20,7 +17,7 @@ d.路由还应该能处理POST数据，并且把数据封装成为更友好的�
 
 e.把内容显示出来，需要一些视图逻辑供请求处理程序使用，以便将内容发送给浏览器。
 
-####构建应用的模块
+#### 构建应用的模块
 
 1.一个基础的HTTP服务器
 
@@ -386,6 +383,6 @@ index.js:
 
 上面这些就完成了一个Node.js的web应用，技术点：服务端Javascript、函数式编程、阻塞与非阻塞、回调、事件、内部和外部模块。
 
-###Express：
+### Express：
 
 Express是一个简介、灵活的node.js Web应用开发框架，它提供一系列强大的特性，帮助你创建各种web和移动设备应用。

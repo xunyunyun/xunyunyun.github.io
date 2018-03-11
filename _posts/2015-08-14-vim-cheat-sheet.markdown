@@ -5,7 +5,7 @@ title:  "vim操作学习"
 tags: ["blog"]
 ---
 
-####Vim cheat sheet常用快捷键
+#### Vim cheat sheet常用快捷键
 
 1. shift+T tab方式打开文件
 

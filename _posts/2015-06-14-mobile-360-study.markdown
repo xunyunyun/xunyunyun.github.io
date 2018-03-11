@@ -5,7 +5,7 @@ title:  "移动端基础（瓜瓜老师）"
 tags: ["mobile"]
 ---
 
-####内置浏览器：
+#### 内置浏览器：
 
 	IOS：safari
 	Windows Phone：IE
@@ -20,7 +20,7 @@ tags: ["mobile"]
 
 对HTML5和CSS3有很好的支持，所以我们不用考虑兼容性问题。
 
-####HTML5：
+#### HTML5：
 
 	语义化标签：header  footer  nav  artcle  main  aside
 	离线存储：可使用Localstorage存储信息到用户的设备中
@@ -29,7 +29,7 @@ tags: ["mobile"]
 	地理位置：移动特性，使用Navigate.getlocation来说明用户地理位置
 	设备转向和螺旋仪：摇一摇，devicemotion事件：获取设备x/y/z方向上的加速度
 
-####CSS3特性
+#### CSS3特性
 
 圆角与阴影
 
@@ -39,12 +39,12 @@ tags: ["mobile"]
 
 变换和动画
 
-####交互：
+#### 交互：
  
 ![house-icon]({{"/img/interactive.jpg" | prepend:site.baseurl}})
 
 
-####开发与调试（教程）
+#### 开发与调试（教程）
 
 设备：尺寸。旋转
 
@@ -55,13 +55,13 @@ tags: ["mobile"]
 传感：触摸、地理位置
 
 
-####CSS像素
+#### CSS像素
 
 设备像素比：DevicePixelRatio = 设备像素/CSS像素
 
 解决不同移动设备下视觉效果。
 
-####视口（viewPort）
+#### 视口（viewPort）
 
 布局视口：CSS布局会被他约束。document.documentElement.width/height
 
@@ -84,7 +84,7 @@ tags: ["mobile"]
 	user-scalable：是否可缩放
 
 
-####媒体查询（Media Query）
+#### 媒体查询（Media Query）
 针对不同屏幕应用不同的样式
 
 {% highlight html %}
@@ -111,7 +111,7 @@ tags: ["mobile"]
 	(min/max-)aspect-ratio
 	Device-width, device-height, device-aspect-ratio不可靠
 
-####弹性布局
+#### 弹性布局
 
 页面的body宽度为100%
 
@@ -132,7 +132,7 @@ display：table 支持性很好！CSS2.1支持
 |display: table-header-group     |<thead>|
 
 
-#####多栏自适应等高布局
+##### 多栏自适应等高布局
 
 Display：table实现多栏等高布局
 {% highlight html %}
@@ -184,7 +184,7 @@ Display：table实现多栏等高布局
 }
 {% endhighlight %}
 
-#####Flexbox
+##### Flexbox
 
 水平或垂直排成一行
 
@@ -384,13 +384,13 @@ body {
 }
 {% endhighlight %}
 
-####移动端事件
+#### 移动端事件
 
 鼠标事件：mousedown  mousemove  mouseup  click
 
 Touch事件: touchstart  touchmove  touchend
 
-#####Click延迟
+##### Click延迟
 
 手机上的click事件有约300ms的延迟，因为浏览器要判断是否为双击缩放行为
 
@@ -403,7 +403,7 @@ Touch事件: touchstart  touchmove  touchend
 
 	使用touch事件模拟tap轻触行为。
 
-#####touchEvent
+##### touchEvent
 
 有三个touchList类型的关键属性
 
