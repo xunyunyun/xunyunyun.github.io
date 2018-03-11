@@ -5,7 +5,7 @@ title: "CSS学习（文博老师）"
 tags: ["CSS","CSS3"]
 ---
 
-####三种字体：
+#### 三种字体：
 
 衬线体：字体的末端有装饰。Georgia、宋体
 
@@ -19,7 +19,7 @@ tags: ["CSS","CSS3"]
 
 2.一般把英文字体放前面，中文放后面（**中英文不同显示，若中文放前面，中文默认中英文均按其格式显示**）
 
-####font-size
+#### font-size
 
 单位有：px、百分比、em
 
@@ -35,17 +35,17 @@ line-height：段落文字一般取值：1.4-1.8
 
 最好为一个数字（倍数），不加em时，计算值的时候不会先转化成一个具体的值。em的话，会先计算出一个具体的值，再继承。
 
-####font-style
+#### font-style
 
 font-weight：normal,bold等
 
 100-900，因为浏览器不支持这么多规格的字体。所以浏览器一般不会正常显示。
 
-####RGB & RGBA
+#### RGB & RGBA
 
 **opacity会改变这个元素的透明度，不仅改变背景色，也会改变上面的文字。这个时候通过RGBA中的A实现。**
 
-####HSL & HSLA
+#### HSL & HSLA
 
 Hue:色相，基本的颜色
 
@@ -53,7 +53,7 @@ Saturation:饱和度，饱和度越高，颜色越亮，否则，变灰
 
 Lightness:亮度，亮度提高变成白色，亮度降低变成黑色
 
-####text-align
+#### text-align
 
 定义文本在容器内的对齐方式
 
@@ -61,7 +61,7 @@ Lightness:亮度，亮度提高变成白色，亮度降低变成黑色
 
 取值为：left、right、center、Justify(只对多行生效，且对最后一行是不生效的)。
 
-####盒模型
+#### 盒模型
 
 Width:指定content box的宽度
 
@@ -71,7 +71,7 @@ Width:指定content box的宽度
 
 只有当包含块的高度，其父容器的高度确定时，其百分比生效（有一种例外，就是CSS拉伸时）
 
-####box-sizing
+#### box-sizing
 
     * {box-sizing : border-box;}
 
@@ -83,11 +83,11 @@ Width:指定content box的宽度
 
 ```box-sizing : inherit;```规定应从父元素继承 box-sizing 属性的值。
 
-####padding
+#### padding
 
 不可为负值
 
-####margin
+#### margin
 
 外边距折叠：
     1.两个div都是float：left；的两个水平div的左边的margin-right和右边的margin-left是否会合并？
@@ -107,7 +107,7 @@ Width:指定content box的宽度
     3. 创建了块级格式化上下文的元素，不会和它的子元素发生margin折叠
     4. 元素自身的margin-bottom和margin-top相邻时也会折叠 
 
-####border
+#### border
 
 得到一些特殊图形（三角形，梯形等）
 
@@ -115,11 +115,11 @@ Width:指定content box的宽度
 
 设置边框什么的不影响百分比，用```box-sizing:border-box```
 
-####视口（viewport）
+#### 视口（viewport）
 
 浏览器的可视区域的宽度和高度
 
-####块级元素
+#### 块级元素
 
 会被格式化成块状的元素
 
@@ -127,7 +127,7 @@ Eg: p、div、section
 
 display : block 、list-item、 table使元素变成块状
 
-####行级元素
+#### 行级元素
 
 让元素内容分布
 
@@ -135,13 +135,13 @@ Eg: a、img、span
 
 Display : inline 、inline-block 、 inline-table使元素变成行级
 
-####display属性
+#### display属性
 
 block、inline、inline-block、none
 
 inline-block元素本身是行级，为其内容生成块级框。
 
-####CSS选择器的内容
+#### CSS选择器的内容
 
 伪类，伪元素
 
@@ -151,11 +151,11 @@ inline-block元素本身是行级，为其内容生成块级框。
         display:block;
     }
 
-####定位流
+#### 定位流
 
 绝对定位、相对定位、浮动定位
 
-####排版流（文档流）
+#### 排版流（文档流）
 
 除了根元素、浮动元素和绝对定位元素外，其他元素都在排盘流之内
 
@@ -163,7 +163,7 @@ inline-block元素本身是行级，为其内容生成块级框。
 
 在排版流中块级元素独占一行；行级元素可以水平并排摆放。
 
-####浮动（float）
+#### 浮动（float）
 
 浮动可以实现将多个块级框并排显示
 
@@ -173,19 +173,19 @@ inline-block元素本身是行级，为其内容生成块级框。
 
 但是浮动元素会对后面的行级元素产生影响，会避开浮动元素。
 
-####clear
+#### clear
 
 指定元素哪一边不能与之前的浮动框相邻
 
 clear：left|right|both
 
-####清除浮动方法
+#### 清除浮动方法
 
 BFC清除浮动
 
 clear清除浮动
 
-####BFC（块级格式化上下文）
+#### BFC（块级格式化上下文）
 
 在BFC中，框会从包含块的顶部开始，从上到下摆放
 
@@ -213,7 +213,7 @@ Overflow属性非visible的块框
 
 双栏布局
 
-####position 定位
+#### position 定位
 
 static：默认值。没有定位，元素出现在正常的流中（忽略 top, bottom, left, right 或者 z-index 声明）。
 
@@ -229,7 +229,7 @@ Top/left/right/bottom/width/height
 
 当同时设置了left、right、width冲突时，以width为准，先舍弃right
 
-####z-index
+#### z-index
 
 必须为整数
 
@@ -258,7 +258,7 @@ z-index指定元素在所属堆叠上下文中的层次
 7.z-index为正值
 
 
-####表格的结构
+#### 表格的结构
 
     <table>
     <thead>
@@ -286,9 +286,9 @@ table-layout: fixed;
 
 CSS中注释为/**/，但是单个属性前加// 也可以用于调试，这样的话，不识别可用。
 
-###CSS3学习
+### CSS3学习
 
-####高级选择器
+#### 高级选择器
 
 E~F 一般兄弟选择器，选中的是F，有一个并列的兄弟是E，选择所有同级的。
 
@@ -298,7 +298,7 @@ E+F 相邻兄弟选择器，只选择相邻的。
 
 input:checked ~ nav 当input被选中时，显示nav导航列表
 
-####结构伪类
+#### 结构伪类
 
 :first-child
 
@@ -308,7 +308,7 @@ input:checked ~ nav 当input被选中时，显示nav导航列表
 
 :not()否定伪类
 
-####圆角
+#### 圆角
 
 Border-radius:5px
 
@@ -316,7 +316,7 @@ Border-radius:5px
 
 可用百分比
 
-####阴影
+#### 阴影
 
 Box-shadow:
 
@@ -344,7 +344,7 @@ Inset
 
 **Photoshop 最新版中有一个功能叫做复制CSS;对于图层，选中，右键，可复制CSS**
 
-####背景
+#### 背景
 
 Background
 **Background-size:**
@@ -352,7 +352,7 @@ Cover：可裁切，但是要盖住这个页面（使用最多的）
 
 Contain: 没有裁切
 
-####[背景缩放](http://webzhao.github.io/sharing/slides.html?file=front-end-essentials-4#/20)
+#### [背景缩放](http://webzhao.github.io/sharing/slides.html?file=front-end-essentials-4#/20)
 
 background-size：cover（图像宽度平铺屏幕，高度比例缩放）、
 
@@ -366,7 +366,7 @@ background-image：landscape、portrait
 
 background-position：center、left top、left bottom、right top、right bottom；
 
-####动画
+#### 动画
 
 1.transform变换
 

@@ -5,9 +5,9 @@ title:  "javascript高级程序设计笔记-10章"
 tags: ["javascript","DOM"]
 ---
 
-###DOM
+### DOM
 
-####Node类型
+#### Node类型
 
 1.元素属性：
 
@@ -85,7 +85,7 @@ ownerDocument属性：指向表示整个文档的文档节点。
 
 ```normalize()```：唯一的作用就是处理文档树中的文本节点。由于解析器的实现或DOM操作等原因，可能会出现文本节点不包含文本，或者接连出现链各个文本节点的情况。如空文本节点，则删除；如找到相邻的文本节点，则将他们合并为一个文本节点。
 
-####Document类型
+#### Document类型
 
 1.文档的子节点
 
@@ -192,7 +192,7 @@ document.implementation.hasFeature()接收两个参数：DOM功能的名称，�
 ```querySelectorAll()```
 下文中详细介绍
 
-####Element类型
+#### Element类型
 
 元素的标签名 ：nodeName 或 tagName属性
 
@@ -236,7 +236,7 @@ document.createElement()方法可以创建新元素。一个参数：要创建�
 
 6.元素的子节点
 
-####Text类型
+#### Text类型
 
 nodeType:3
 nodeName:#text
@@ -299,7 +299,7 @@ splitText():这个方法将一个文本节点分成两个文本节点。
 
 分割文本节点是从文本节点中提取数据的一种常用DOM解析技术
 
-####Comment类型
+#### Comment类型
 
 nodeType:8
 nodeName:#commment
@@ -309,9 +309,9 @@ parentNode：可能是Document或Element
 
 与Text类型类似，除了splitText()方法之外的所有字符串操作方法。
 
-###DOM操作技术
+### DOM操作技术
 
-####动态脚本
+#### 动态脚本
 
 	var script = document.createElement("script");
 	script.type = "text/javascript";
@@ -339,7 +339,7 @@ parentNode：可能是Document或Element
 		document.body.appendChild(script);
 	}
 
-####动态样式
+#### 动态样式
 
 	var link = document.createElement("link");
 	link.rel = "stylesheet";
@@ -371,15 +371,15 @@ parentNode：可能是Document或Element
 	var head = document.getElementsByTagName("head")[0];
 	head.appendChild(link);
 
-####操作表格
+#### 操作表格
 
-####使用NodeList
+#### 使用NodeList
 
 NodeList、NamedNodeMap、HTMLCollection。每当文档结构发生改变时，它们都会得到更新。
 
-###DOM扩展
+### DOM扩展
 
-####选择符API
+#### 选择符API
 
 1.querySelector()方法
 
@@ -394,7 +394,7 @@ querySelectorAll()方法和querySelector()方法参数相同，但返回的是**
 
 接受一个参数：CSS选择符;匹配，返回true，否则，返回false。
 
-####元素遍历
+#### 元素遍历
 
 属性：
 
@@ -404,7 +404,7 @@ lastElementChild：指向最后一个子元素；lastChild的元素版
 previousElementSibling:指向前一个同辈元素；previousSibling的元素版
 nextElementSibling:指向后一个同辈元素；nextSibling的元素版
 
-####HTML5
+#### HTML5
 
 1.getELementsByClassName()方法
 
@@ -488,7 +488,7 @@ HTML5新增。引用文档的```<head>```元素。
 
 	var head = document.head || document.getElementByTagName("head")[0];
 
-####字符集属性
+#### 字符集属性
 
 	alert(document.charset);//"UTF-16"
 	document.charset = "UTF-8";
@@ -511,7 +511,7 @@ HTML5规定可以为元素添加非标准的属性，但要添加前缀data-，�
 
 两个参数：插入位置、要插入的HTML文本
 
-####专有扩展
+#### 专有扩展
 
 1.文档模式
 

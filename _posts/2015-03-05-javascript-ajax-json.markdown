@@ -5,11 +5,11 @@ title:  "ajax全接触[慕课网]"
 tags: ["ajax","json"]
 ---
 
-####ajax原理
+#### ajax原理
 
 XHR对象来向服务器发异步请求，从服务器获得数据，然后用JS来操作DOM而更新页面的过程。
 
-####XHR(XMLHttpRequest)对象
+#### XHR(XMLHttpRequest)对象
 
 用XHR和web服务器进行数据的异步交换。
 
@@ -23,7 +23,7 @@ XHR对象来向服务器发异步请求，从服务器获得数据，然后用JS
  		request = new ActiveObject("Microsoft.XMLHTTP");
  	}
 
-####一个完整的HTTP请求：
+#### 一个完整的HTTP请求：
 
  1.建立TCP连接（3次握手）
  2.web浏览器向web服务器发送请求头部发送请求
@@ -33,7 +33,7 @@ XHR对象来向服务器发异步请求，从服务器获得数据，然后用JS
  6.web服务器向浏览器发送数据
  7.web服务器关闭TCP连接
 
-####XMLHttpRequest发送请求
+#### XMLHttpRequest发送请求
 
 	open(method,url,async);
 
@@ -53,7 +53,7 @@ async:true|false;true为异步
 	request.setRequestHeader("Context-type","application/x-www-form-urlencoded");
 	request.send("name='张三'&sex='男'");
 
- ####XMLHttpRequest获得响应
+ #### XMLHttpRequest获得响应
 
 ```responseText```：获得字符串形式的响应数据
 
@@ -85,7 +85,7 @@ request.onreadystatechange = function(){
 }
 {% endhighlight %}
 
-####服务器端实现
+#### 服务器端实现
 
 1.对于get型：
 
@@ -130,7 +130,7 @@ function create(){
 }
 {% endhighlight %}
 
-####用Jquery实现ajax
+#### 用Jquery实现ajax
 
 ```jquery.ajax([settings])```
 
@@ -164,9 +164,9 @@ $.ajax({
 {% endhighlight %}
 
 
-####跨域处理方式
+#### 跨域处理方式
 
-#####**什么是跨域？**
+##### **什么是跨域？**
 
 http://www.abc.com:8080/scripts/jquery.js
 	
@@ -184,7 +184,7 @@ http://www.abc.com:8080/scripts/jquery.js
 
 出于安全起见，不允许跨域调用其他页面的对象。
 
-#####**处理跨域的三种方式**
+##### **处理跨域的三种方式**
 
 **1.代理**：
 

@@ -1,7 +1,7 @@
 ---
 layout: post
 category: "mysql"
-title:  "node链接mysql数据库npm包之mysql文档学习"
+title:  "node连接mysql数据库"
 tags: ["mysql","nodejs"]
 ---
 
@@ -45,11 +45,13 @@ ROLLBACK
 
 MySQL的事务支持不是绑定在MySQL服务器本身，而是与存储引擎相关1.MyISAM：不支持事务，用于只读程序提高性能 2.InnoDB：支持ACID事务、行级锁、并发 3.Berkeley DB：支持事务
 
-####nodejs插件mysql介绍
+#### Nodejs插件mysql介绍
+
 安装
 npm install mysql
 mysql使用
 创建链接
+```js
 var mysql      = require('mysql');
 // 创建数据库连接对象
 var connection = mysql.createConnection({
@@ -68,8 +70,9 @@ connection.connect(function(err) {
  
   console.log('connected as id ' + connection.threadId);
 });
+```
 或直接采用如下方式：
-
+```js
 var mysql      = require('mysql');
 // 创建数据库连接对象
 var connection = mysql.createConnection({
@@ -85,6 +88,7 @@ connection.query('SELECT 1 + 1 AS solution', function (error, results, fields) {
 });
  
 connection.end();
+```
 连接参数
 createConnection(config)函数的参数config的可用的属性值列表如下：
 

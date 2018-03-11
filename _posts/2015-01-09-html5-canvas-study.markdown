@@ -5,7 +5,7 @@ title:  "canvas学习"
 tags: ["html5","canvas"]
 ---
 
-####canvas学习（2）
+#### canvas学习（2）
 
 1.绘制图形
 

@@ -5,7 +5,7 @@ title: "实现一些小功能（月影老师）"
 tags: ["月影课堂问题"]
 ---
 
-####1.判断是否为素数
+#### 1.判断是否为素数
 
 {% highlight javascript %}
 function isPrime(number){
@@ -24,7 +24,7 @@ function isPrime(number){
 console.log(isPrime(7));
 {% endhighlight %}
 
-####2.判断是否为字符串或数组
+#### 2.判断是否为字符串或数组
 
 {% highlight javascript %}
 function isArray(arr) {
@@ -41,7 +41,7 @@ console.log(isString("abcdefg"));
 {% endhighlight %}
 
 
-####3.字符串逆序
+#### 3.字符串逆序
 
 {% highlight javascript %}
 // method first
@@ -65,7 +65,7 @@ console.log(reverseStr(str));
 console.log(reverse(str));
 {% endhighlight %}
 
-####4.数组去重
+#### 4.数组去重
 
 {% highlight javascript %}
 //单个化
@@ -105,7 +105,7 @@ console.log(input);
 
 {% endhighlight %}
 
-####5.将argument转化为数组
+#### 5.将argument转化为数组
 
 {% highlight javascript %}
 //slice函数返回一个数组（部分）的浅拷贝，为一个新数组对象
@@ -121,7 +121,7 @@ console.log(test(1, 2, 3, 4));
 {% endhighlight %}
 
 
-####6.求传入参数的和
+#### 6.求传入参数的和
 
 {% highlight javascript %}
 //考察点argument转数组
@@ -138,7 +138,7 @@ console.log(sum(1, 2, 3, 4));
 console.log(sum(1, 2));
 {% endhighlight %}
 
-####7.第二大数
+#### 7.第二大数
 
 {% highlight javascript %}
 //考察点：不能用sort函数实现数字型数组排序，但可以实现字符串型数组按首字母排序
@@ -149,7 +149,7 @@ arr.sort(function(n1,n2){
 console.log(arr[1]);
 {% endhighlight %}
 
-####8.离3近排序
+#### 8.离3近排序
 
 {% highlight javascript %}
 //与上面思路相同
@@ -161,7 +161,7 @@ console.log(arr);
 {% endhighlight %}
 
 
-####9.数组扁平化
+#### 9.数组扁平化
 
 {% highlight javascript %}
 function flat(data, result) {
@@ -182,7 +182,7 @@ flat(data, result);
 console.log(result);
 {% endhighlight %}
 
-####10.数组有序变无序
+#### 10.数组有序变无序
 
 {% highlight javascript %}
 //方法一
@@ -222,7 +222,7 @@ console.log(getRandomArray(arr));
 
 
 
-####10.数组中的最大奇数和最小偶数
+#### 10.数组中的最大奇数和最小偶数
 
 {% highlight javascript %}
 // method first
@@ -296,7 +296,7 @@ console.log(arr.getSumOfMaxOddAndMinEven());//不是整数数组
 {% endhighlight %}
 
 
-####11.判断字符串是否为回文
+#### 11.判断字符串是否为回文
 
 {% highlight javascript %}
 //思路: 将字符串反转之后，与原字符串比较；
@@ -313,7 +313,7 @@ console.log(ishuiwen("abcdedcba"));
 console.log(ishuiwen("abcdecba"));
 {% endhighlight %}
 
-####12.将整数的10进制转化为其他进制
+#### 12.将整数的10进制转化为其他进制
 
 {% highlight javascript %}
 //方法一 思路: 从低位转化，再反转；

@@ -5,9 +5,9 @@ title: "HTML学习（文博老师）"
 tags: ["HTML","HTML5"]
 ---
 
-###HTML基础篇
+### HTML基础篇
 
-####DOCTYPE的作用
+#### DOCTYPE的作用
 
 DocumentType，文档类型声明
 
@@ -15,7 +15,7 @@ DocumentType，文档类型声明
 
 浏览器根据doctype决定使用哪种渲染模式
 
-####渲染模式
+#### 渲染模式
 
 Quirks Mode怪异模式
 
@@ -23,11 +23,11 @@ Almost standerd mode准标准模式transitional
 
 standerd mode标准模式
 
-####HTML4 & XHTML
+#### HTML4 & XHTML
 
 XHTML为严格模式
 
-####HTML5设计思想
+#### HTML5设计思想
 
 兼容已有内容（各种格式）
 
@@ -41,7 +41,7 @@ XHTML为严格模式
 
 用户》开发者》浏览器厂商》标准制定者》理论完美
 
-####HTML5语义化
+#### HTML5语义化
 
 开发者应该遵循语义来写:
 
@@ -116,7 +116,7 @@ h1-h6等元素结合起来使用，标示文档结构
 
 ```menu```表示菜单列表。当希望列出表单控件时使用该标签。
 
-####元数据标签
+#### 元数据标签
 
 ```base```：指定基准URL及连接打开方式
 
@@ -132,7 +132,7 @@ h1-h6等元素结合起来使用，标示文档结构
 
 ```style```：嵌入页面样式表
 
-####meta
+#### meta
 
     <meta name = 'viewport' content = "width=device-width;initial-scale=1;user-scale=no">
 
@@ -148,7 +148,7 @@ h1-h6等元素结合起来使用，标示文档结构
 
     <meta name='renderer' content='webkit'>
 
-####使用图片
+#### 使用图片
 
 Img alt很重要
 
@@ -157,7 +157,7 @@ Img alt很重要
         <caption>图片标题</caption>
     </figure>
 
-####常用的图片格式
+#### 常用的图片格式
 
 1.jpg
 ---照片
@@ -180,7 +180,7 @@ Img alt很重要
 
 避免使用<br>；邮箱的建议加一个链接，可以直接发邮件
 
-####Html5中input的新类型：
+#### Html5中input的新类型：
 
 Time
 

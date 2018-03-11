@@ -5,9 +5,9 @@ title:  "javascript高级程序设计笔记-8章"
 tags: ["javascript","BOM"]
 ---
 
-###BOM
+### BOM
 
-####1.window对象
+#### 1.window对象
 
 （1）全局作用域
 
