@@ -1,6 +1,6 @@
 ---
 layout: post
-category: "Javascript"
+category: "javascript"
 title: "用javascript实现排序"
 tags: ["排序"]
 ---
@@ -120,6 +120,100 @@ var array = [85,24,5,17,17,96,50];
 console.log(quicksort(array));
 
 {% endhighlight %}
+
+#### **归并排序**
+
+{% highlight javascript %}
+
+/**
+  * 归并操作(Merge)，也叫归并算法，指的是将两个已经排序的序列合并成一个序列的操作。
+  * 归并排序算法依赖归并操作。归并排序有多路归并排序、两路归并排序, 可用于内排序，也可以用于外排序。
+  * 这里仅对内排序的两路归并方法进行讨论。
+  * 算法思路：
+  * 1.把n个记录看成n个长度为l的有序子表
+  * 进行两两归并使记录关键字有序，得到 n/2 个长度为 2 的有序子表
+  * 重复第 2 步直到所有记录归并成一个长度为 n 的有序表为止。
+  */
+
+function mergeSort(array) {
+    function sort(array, first, last) {
+        first = (first === undefined) ? 0 : first
+        last = (last === undefined) ? array.length - 1 : last
+        if (last - first < 1) {
+            return;
+        }
+        var middle = Math.floor((first + last) / 2);
+        sort(array, first, middle);
+        sort(array, middle + 1, last);
+        var f = first,
+            m = middle,
+            i,
+            temp;
+        while (f <= m && m + 1 <= last) {
+            if (array[f] >= array[m + 1]) { // 这里使用了插入排序的思想
+                temp = array[m + 1];
+                for (i = m; i >= f; i--) {
+                    array[i + 1] = array[i];
+                }
+                array[f] = temp;
+                m++
+            } else {
+                f++
+            }
+        }
+        return array;
+    }
+    return sort(array);
+}
+{% endhighlight %}
+
+[参考文档](http://bubkoo.com/2014/01/15/sort-algorithm/merge-sort/)
+
+##### 应用
+
+合并两个有序数组
+
+```js
+var A = [1, 2, 4, 7], B = [3, 5, 6, 8, 10, 12]; // C = [1, 2, 3, 4, 5, 6, 7, 8]。
+// 合并方法一
+function mergeSort(a, b){
+    // 插入排序
+    var i = 0; j = 0, arr = [];
+    while(i < a.length || j < b.length){
+        if(i === a.length){
+            arr.push(b[j]);
+            j++;
+        }else if(j === b.length){
+            arr.push(a[i]);
+            i++;
+        }else if(a[i] < b[j]){
+            arr.push(a[i]);
+            i++;
+        }else{
+            arr.push(b[j]);
+            j++
+        }
+    }
+    return arr;
+}
+mergeSort(A, B)
+// 合并方法二：语法简化
+function merge(a, b) {
+    var c = [], i = 0, j = 0, lenA = a.length, lenB = b.length;
+    while (i < lenA && j < lenB) {
+        c.push(a[i] < b[j] ? a[i++] : b[j++]);
+    }
+    if (i < lenA) {
+        [].push.apply(c, a.slice(i));
+    }
+    if (j < lenB) {
+        [].push.apply(c, b.slice(j));
+    }
+    return c; 
+}
+var A = [1, 2, 4, 7], B = [3, 5, 6, 8, 10, 12]; // C = [1, 2, 3, 4, 5, 6, 7, 8]。
+merge(A, B)
+```
 
 #### **堆排序**
 

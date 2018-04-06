@@ -1,6 +1,6 @@
 ---
 layout: post
-category: "Javascript"
+category: "javascript"
 title:  "Javascript事件监听，事件委托"
 tags: ["事件"]
 ---

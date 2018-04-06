@@ -1,8 +1,8 @@
 ---
 layout: post
-category: "jquery"
+category: "jQuery"
 title:  "jquery学习(岳文老师)"
-tags: ["jquery"]
+tags: ["jQuery"]
 ---
 
 #### jQuery特点

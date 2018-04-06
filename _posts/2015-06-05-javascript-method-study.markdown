@@ -1,6 +1,6 @@
 ---
 layout: post
-category: "Javascript"
+category: "javascript"
 title: "实现一些小功能（月影老师）"
 tags: ["月影课堂问题"]
 ---
