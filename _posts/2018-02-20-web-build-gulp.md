@@ -5,8 +5,6 @@ title:  "gulp构建总结"
 tags: ["gulp"]
 ---
 
-## gulp构建总结
-
 ### gulp构建注意事项
 
 gulp构建的任务尽量要有callback函数，这样才可以方便的控制任务的执行顺序。

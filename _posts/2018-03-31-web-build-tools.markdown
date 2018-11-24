@@ -1,11 +1,9 @@
 ---
 layout: post
 category: "构建工具"
-title:  "构建工具"
+title:  "构建工具对比"
 tags: ["webpack4", "parcel", "rollup"]
 ---
-
-## 构建工具对比
 
 主要对比以下三种构建工具进行介绍：
 
